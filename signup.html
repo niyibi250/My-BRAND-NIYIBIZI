@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>SIGNUP PAGE</title>
+        <link rel="stylesheet" href="login.css">
+        <!--icon link-->
+        <!--box icons link-->
+        <link rel="stylesheet"
+         href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!--remix-icon link-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <section class="main-cont">
+            <h2 style="font-size: 2rem;">Hello!</h1>
+            <h1 style="font-size: 2.5rem;">Let's started</h1>
+            <form id="inputform">
+                <input class="inputfield" type="text" id="email_signup" placeholder="Email">
+                <div class="errors"></div>
+                <input class="inputfield"  type="text" id="username_signup" placeholder="Username">
+                <div class="errors"></div>
+                <input class="inputfield" type="text" id="password_signup" placeholder="Password">
+                <div class="errors"></div>
+                <h3>Already had account? <a class="login" href="/login.html">Login</a></h3>
+                <button class="btn-btm" id="signup_button" type="submit">signup</button>
+            </form>
+            <div class="text-inbtn">
+                <div class="line"></div>
+                <h5>Or signup with</h5>
+                <div class="line"></div>
+            </div>
+            <a class="google-icon">
+                <i class="ri-google-fill"></i>
+                <h3>Google</h3>
+            </a>
+        </section>
+        <script src="signup.js"></script>
+    </body>
+</html>
