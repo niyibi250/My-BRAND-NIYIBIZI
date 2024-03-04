@@ -113,3 +113,25 @@ function check_the_input(elem,values)
         elem.style.border="1px solid red"
     }
 }
+
+
+// update the contact section
+
+let experiance=document.getElementById("experience")
+let speciality=document.getElementById("speciality")
+let address=document.getElementById("address_")
+let email_about=document.getElementById("email")
+let phone=document.getElementById("Phone")
+let avaiblity=document.getElementById("availblelity")
+
+experiance.innerHTML=localStorage.getItem('experiance')
+
+speciality.innerHTML=localStorage.getItem('speciality')
+
+address.innerHTML=localStorage.getItem('address')
+
+email_about.innerHTML=localStorage.getItem('email')
+
+phone.innerHTML=localStorage.getItem('phone')
+
+avaiblity.innerHTML=localStorage.getItem('avaiblity')

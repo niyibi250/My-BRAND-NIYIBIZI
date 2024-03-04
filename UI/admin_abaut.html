@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="admin_abaut.css">
+        <!--icon link-->
+         <!--box icons link-->
+         <link rel="stylesheet"
+         href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!--remix-icon link-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+        <!--google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container" id="cont-1">
+            <div class="plofile-picture">
+                <div class="live-sign"></div>
+            </div>
+            <div id="profile-name">
+                <h4>N.Eric</h4>
+                <h6>(Active)</h6>
+            </div>
+            <h3  id="dashboard"><a href="/UI/dashboard.html">Dashboard</a></h3>
+            <div class="menu-list">
+                <h3><a href="#cont-2">Home</a></h3>
+                <h3>About</h3>
+                <h3><a>Services</a></h3>
+                <h3><a>Portfolio</a></h3>
+                <h3><a>Contact</a></h3>
+            </div>
+            <i class="ri-arrow-left-circle-fill"></i>
+            <h4 id="Sign-out">Sign-out</h4>
+        </div>
+        <div class="container" id="cont-2">
+            <div class="display-box">
+                <h4>Message</h4>
+                <div class="display-number"><h4>58</h4></div>
+            </div>
+            <div class="display-box">
+                <h4>Downloads</h4>
+                <div class="display-number"><h4>10+</h4></div>
+            </div>
+            <div class="display-box">
+                <h4>Services</h4>
+                <div class="display-number"><h4>5</h4></div>
+            </div>
+            <div class="display-box">
+                <h4>Postes</h4>
+                <div class="display-number"><h4>6</h4></div>
+            </div>
+        </div>
+        <div class="container" id="cont-3">
+            <div class="edit" id="edit_abaut">
+                <form id="form">
+                    <div class="box_abaut">
+                        <label for="experience">Enter experience:</label>
+                        <input id="experience" class="input" name="experience">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="speciality">Enter speciality:</label>
+                        <input id="speciality" class="input" name="speciality">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="address">Enter Address:</label>
+                        <input id="address_" class="input" name="address">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="email">Enter Email:</label>
+                        <input id="email" class="input" name="email">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="Phone">Enter Phone:</label>
+                        <input id="Phone" class="input" name="Phone">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="Availablity">Enter Availablity:</label>
+                        <input id="availblelity" class="input" name="Availablity">
+                    </div>
+                    <button type="submit" id="Add_to_local_storege">Add to website</button>
+                </form>
+            </div>
+        </div>
+        <script src="admin_abaut.js"></script>
+    </body>
+</html>

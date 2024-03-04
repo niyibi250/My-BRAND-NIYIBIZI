@@ -24,8 +24,8 @@ body{
     background:var(--bg-color);
     padding: 20px;
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     grid-template-columns:repeat(auto-fit,minmax(150px,auto));
 }
 a{
@@ -156,10 +156,14 @@ i:hover{
  grid-row-end: 8;
  display: flex;
  flex-direction: column;
- justify-content: space-between;
+ justify-content: center;
  align-items: center;
+ padding: 35px;
 }
-
+.edit{
+    display: flex;
+    width: 100%;
+}
 #cont-3 h3{
     margin: 2% 5%;
     align-self: flex-start;
@@ -167,30 +171,38 @@ i:hover{
     padding: 0 0 15px 0;
 }
 
-table{
+.input{
+    color: var(--other-colar);
+    width: 80%;
+    height: 40px;
+    padding: 20px;
+    border: none;
+    outline: none ;
+    box-shadow: 0 0 5px var(--main-color);
+    background: #2d343f;
+    border-radius: 8px;
+    margin:  15px 35px 15px 8px;
+    
+}
+#form{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
-    padding: 2% 5%;  
 }
-th{
-    text-align: start;
-    border-bottom: 1.5px solid;
-    border-collapse: collapse;
+button{
+    width: fit-content;
+    height: 35px;
+    padding: 0 10px;
+    background: var(--main-color);
+    border: none;
+    outline: none;
+    font-size: var(--p-font);
+    align-self: center;
+    margin-top: 20px;
+    border-radius: 5px;
 }
-td{
-    border-bottom: 1.5px solid;
-}
-.row{
-    background: var(--bg-color);
-    margin: 20px;
+.box_abaut{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-h4{
-    display: inline-block;
-}
-h3{
-    font-size: var(--h3-font);
-    color: var(--other-colar);
 }
