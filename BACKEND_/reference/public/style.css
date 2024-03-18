@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(19, 135, 139);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 60px;
+}
+label{
+    color: rgba(88, 172, 27, 0.999);
+    font-size: 25px;
+    margin: 20px;
+}
+input{
+    width: 20%;
+    border: 3px solid gold;
+}

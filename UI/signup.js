@@ -5,7 +5,7 @@ let password=document.getElementById("password_signup")
 let form=document.getElementById("inputform")
 let errorMsg=document.getElementsByClassName("errors")
 
-email.addEventListener('change',(ev)=>
+email.addEventListener('change',function(ev)
 {
     // ev.preventDefault() 
     if(email.value.trim() != '')
@@ -15,14 +15,10 @@ email.addEventListener('change',(ev)=>
          if(email.value[i]=='@')
          {
             errorMsg[0].innerHTML=''
-            email.style.border = "none";
-
-            console.log(email.value)
             return
          }
          else{
             errorMsg[0].innerHTML='The email is invired must contain "@"'
-            console.log(email.value) 
         }
       }
     }
@@ -31,7 +27,7 @@ email.addEventListener('change',(ev)=>
         console.log('email is empty')
     }
 })
-username.addEventListener('change',(ev)=>
+username.addEventListener('change',function(ev)
 {
     // ev.preventDefault() 
     if(username.value.trim() != '')
@@ -48,8 +44,6 @@ username.addEventListener('change',(ev)=>
             }
             else {
                 errorMsg[1].innerHTML=''
-                username.style.border = "none";
-                console.log(username.value[i], symbol[j])
             }
          }
          
@@ -57,11 +51,10 @@ username.addEventListener('change',(ev)=>
     }
     else{
         errorMsg[1].innerHTML="Username can't be Empty"
-        console.log('username empty')
     }
 })
 
-password.addEventListener('change',(ev)=>
+password.addEventListener('change',function(ev)
 {
     // ev.preventDefault
     if(password.value.trim() != '')
@@ -72,7 +65,6 @@ password.addEventListener('change',(ev)=>
        }
        else{
         errorMsg[2].innerHTML=''
-        email.style.border = "none";
        }
     }
     else{
@@ -81,19 +73,32 @@ password.addEventListener('change',(ev)=>
 }
 )
 
-form.addEventListener('submit',(ev)=>
-{
-  ev.preventDefault()
-  check_the_input(email,0)
-  check_the_input(username,1)
-  check_the_input(password,2)
-})
+// add user to user_list
+// --------------------------//
+let user_list=JSON.parse(localStorage.getItem('user_list'))||[]
+let signup_button=document.getElementById('signup_button')
 
-function check_the_input(elem,values)
+signup_button.addEventListener('click',add_new_user)
+
+function add_new_user()
 {
-    if(elem.value.trim()=='')
-    {
-        elem.style.border="1px solid red"
-    }
-    
+    let email=document.getElementById("email_signup")
+    let username=document.getElementById("username_signup")
+    let password=document.getElementById("password_signup")
+    add_to_user_list(email.value,username.value,password.value )
+    email.value=null
+    user_list.value=null
+    password.value=null
+    console.log('its should log homepage')
+}
+function add_to_user_list(email,username,password)
+{
+    user_list.push({
+        username,
+        email,
+        password
+    })
+    // user_list=[]
+    localStorage.setItem('user_list',JSON.stringify(user_list))
+    window.location.assign('index.html')
 }

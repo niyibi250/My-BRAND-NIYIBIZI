@@ -25,99 +25,237 @@
                 <h4>N.Eric</h4>
                 <h6>(Active)</h6>
             </div>
-            <h3  id="dashboard">Dashboard</h3>
+            <h3  id="dashboards"><a href="#dashboard">Dashboard</a></h3>
             <div class="menu-list">
-                <h3><a>Home</a></h3>
-                <h3><a href="/admin_abaut.html">About</a></h3>
+                <h3><a href="#user_page">Users</a></h3>
+                <h3><a href="#about">About</a></h3>
                 <h3><a>Services</a></h3>
+                <h3><a href="#blogs_page">Blogs</a></h3>
                 <h3><a>Portfolio</a></h3>
-                <h3><a>Contact</a></h3>
+                <h3><a href="#contact_">Contact</a></h3>
             </div>
-            <i class="ri-arrow-left-circle-fill"></i>
+            <a href="/UI/index.html"><i class="ri-arrow-left-circle-fill" ></i></a>
             <h4 id="Sign-out">Sign-out</h4>
         </div>
         <div class="container" id="cont-2">
             <div class="display-box">
                 <h4>Message</h4>
-                <div class="display-number"><h4>58</h4></div>
+                <div class="display-number" id="number_of_message"><h4>58</h4></div>
             </div>
             <div class="display-box">
                 <h4>Downloads</h4>
                 <div class="display-number"><h4>10+</h4></div>
             </div>
             <div class="display-box">
-                <h4>Services</h4>
-                <div class="display-number"><h4>5</h4></div>
+                <h4>Users</h4>
+                <div class="display-number" id="number_of_user"><h4>5</h4></div>
             </div>
             <div class="display-box">
-                <h4>Postes</h4>
-                <div class="display-number"><h4>6</h4></div>
+                <h4>Blogs</h4>
+                <div class="display-number" id="number_of_blogs"><h4>3</h4></div>
             </div>
         </div>
-        <div class="container" id="cont-3">
-            <h3>Recent activities</h3>
-            <table>
-                <tr>
-                    <th>#Section</th>
-                    <th>#Element</th>
-                    <th>#id/class</th>
-                    <th>#Notes</th>
-                </tr>
-                <tr>
-                    <td>Home</td>
-                    <td>h1</td>
-                    <td>#</td>
-                    <td>change font</td>
-                </tr>
-                <tr>
-                    <td>Home</td>
-                    <td>p</td>
-                    <td>#</td>
-                    <td>change content</td>
-                </tr>
-                <tr>
-                    <td>contact</td>
-                    <td>input</td>
-                    <td>#</td>
-                    <td>change image</td>
-                </tr>
-                <tr>
-                    <td>About</td>
-                    <td>img</td>
-                    <td>#</td>
-                    <td>change font</td>
-                </tr>
-            </table>
-            <!-- <div class="row">
-                <h4 class="row-text">#section</h4>
-                <h4 class="row-text">#Element</h4>
-                <h4 class="row-text">#id/class</h4>
-                <h4 class="row-text">#Notes</h4>
+        <!-- Dashbord -->
+
+        <section class="container" id="dashboard">
+           <div class="container_content">
+                <h3>Recent activities</h3>
+                <table>
+                    <tr>
+                        <th>#Section</th>
+                        <th>#Element</th>
+                        <th>#id/class</th>
+                        <th>#Notes</th>
+                    </tr>
+                    <tr>
+                        <td>Home</td>
+                        <td>h1</td>
+                        <td>#</td>
+                        <td>change font</td>
+                    </tr>
+                    <tr>
+                        <td>Home</td>
+                        <td>p</td>
+                        <td>#</td>
+                        <td>change content</td>
+                    </tr>
+                    <tr>
+                        <td>contact</td>
+                        <td>input</td>
+                        <td>#</td>
+                        <td>change image</td>
+                    </tr>
+                </table>
             </div>
-            <div class="row">
-                <h4 class="row-text">Home</h4>
-                <h4 class="row-text">Element</h4>
-                <h4 class="row-text">#</h4>
-                <h4 class="row-text">change font</h4>
+        </section>
+        <!-- user -->
+        <section class="container" id="user_page">
+            <div class="user_ contact_">
+                <h3>Users</h3>
+                <div class="user_container_first_low contact_message_first_low">
+                    <div id="user_first_low">
+                       <div id="name_">Name</div>
+                       <div id="email_">Email</div>
+                       <div id="Password">Password</div>
+                       <div id="delete_">Delete User</div>
+                       <div id="edit_">Edit User</div>
+                    </div>
+                    <ul id="user_list">
+                        <li class="user_row">
+                            <h4 class="name_">Eric NIYIBIZI</h4>
+                            <h4 class="email_">admin123@gmail.com</h4>
+                            <h4 class="password">admin12345</h4>
+                            <i class="ri-delete-bin-6-fill delete_c"></i>
+                            <i class="ri-pencil-fill"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="row">
-                <h4 class="row-text">Home</h4>
-                <h4 class="row-text">Element</h4>
-                <h4 class="row-text">#</h4>
-                <h4 class="row-text">change content</h4>
+
+        </section>
+        <!-- About -->
+
+        <section class="container" id="about">
+            <div class="edit" id="edit_abaut">
+                <h3>About</h3>
+                <form id="form">
+                    <div class="box_abaut">
+                        <label for="experience">Enter experience:</label>
+                        <input id="experience" class="input" name="experience">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="speciality">Enter speciality:</label>
+                        <input id="speciality" class="input" name="speciality">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="address">Enter Address:</label>
+                        <input id="address_" class="input" name="address">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="email">Enter Email:</label>
+                        <input id="email" class="input" name="email">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="Phone">Enter Phone:</label>
+                        <input id="Phone" class="input" name="Phone">
+                    </div>
+                    <div class="box_abaut">
+                        <label for="Availablity">Enter Availablity:</label>
+                        <input id="availblelity" class="input" name="Availablity">
+                    </div>
+                    <button type="submit" id="Add_to_local_storege">Add to website</button>
+                </form>
             </div>
-            <div class="row">
-                <h4 class="row-text">Contact</h4>
-                <h4 class="row-text">Element</h4>
-                <h4 class="row-text">#</h4>
-                <h4 class="row-text">change input type</h4>
+        </section>
+
+        <!-- Blogs -->
+
+        <section class="container" id="blogs_page">
+            <div class="blogs_page">
+                <h3>Blogs</h3>
+                <div class="list_of_blogs">
+                    <div id="blog_first_row">
+                        <div class="titles">Blog Title</div>
+                        <div class="Blogs_categolies">Categories</div>
+                        <div class="last_madified">Last Modified</div>
+                        <div class="action_delete">Delete</div>
+                        <div class="action_edit">Edit</div>
+                    </div>
+                    <ul class="blogs_list" id="list_of_blog_cont">
+                        <li class="blog">
+                            <h4 class="titles">Website Development For Dark Mode</h4>
+                            <h4 class="Blogs_categolies">Design</h4>
+                            <h4 class="last_madified">----</h4>
+                            <i class="ri-delete-bin-6-fill"></i>
+                            <i class="ri-pencil-fill"></i>
+
+                        </li>
+                        <li class="blog">
+                            <h4 class="titles">Best way of Coding in Python</h4>
+                            <h4 class="Blogs_categolies">Coding</h4>
+                            <h4 class="last_madified">----</h4>
+                            <i class="ri-delete-bin-6-fill"></i>
+                            <i class="ri-pencil-fill"></i>
+
+                        </li>
+                        <li class="blog">
+                            <h4 class="titles">Besics features in Figma</h4>
+                            <h4 class="Blogs_categolies">Disign</h4>
+                            <h4 class="last_madified">----</h4>
+                            <i class="ri-delete-bin-6-fill"></i>
+                            <i class="ri-pencil-fill"></i>
+
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="create_" id="create_">Create Blog</button>
+                    <button class="create_" id="delete_all_blog">Delete all Blogs</button>
+                </div>
+                <!-- blog create box -->
+                <div class="create_box_" id="create_box">
+                 <form action="">
+                        <div class="create_cont">
+                            <div>
+                                <label class="crate_label" for="title_">Type the Title of Blog:</label>
+                                <input class="create_input" type="text" name="title_" id="title_">
+                            </div>
+                            <div>
+                                <label class="crate_label" for="Categ_">Choose The category of Blog:</label>
+                                <input class="create_input" name="Categ_" id="category_">
+                            </div>
+                        </div>
+                        <div id="text_area_">
+                            <textarea class="text_area" placeholder="Type the content of Blog" id="text_"></textarea>
+                        </div>
+                        <div class="create_cont_">
+                             <h4>Choose Image:</h4>
+                             <input type="file" id="input_image" >
+                        </div>
+                  </form>
+                  <div class="button_">
+                     <button id="create_button">Create</button>
+                     <button id="cancel_create">Cancel</button>
+                 </div>
+                </div>
+                <div class="worning_box" id="worning_box">
+                    <button onclick="close_delet_box()" id='close_button'> <i class="ri-close-line" id='close_symbol'></i></button>
+                    <h2>You Want to DELETE all BLOGS??</h2>
+                    <h3>This Action is not Resversible Do it On Your Own Risk!!</h3>
+                    <div>
+                        <button class="create_" onclick="yes_delete_all_blog()">Continue Delete All Blog</button>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <h4 class="row-text">About</h4>
-                <h4 class="row-text">Element</h4>
-                <h4 class="row-text">#</h4>
-                <h4 class="row-text">change image</h4>
-            </div> -->
-        </div>
+        </section>
+        <!-- Contact -->
+        <section class="container" id="contact_">
+            <div class="contact_">
+                <h3>Messages</h3>
+                <div class="contact_message_first_low">
+                    <div id="contact_first_low">
+                       <div id="name_">Name</div>
+                       <div id="email_">Email</div>
+                       <div id="time_">Send Time</div>
+                       <div id="read_">Read Message</div>
+                       <div id="delete_">Delete Message</div>
+                       <div id="respond_">Respond</div>
+                    </div>
+                    <ul class="contact_message_list" id="contact_message_list">
+                        <li class="message_">
+                            <h4 class="name_">Eric NIYIBIZI</h4>
+                            <h4 class="email_">ericniyibizi1998@gmail.com</h4>
+                            <h4 class="time_">----</h4>
+                            <i class="ri-mail-unread-line read_"></i>
+                            <i class="ri-delete-bin-6-fill delete_c"></i>
+                            <i class="ri-discuss-fill respond_"></i>
+                        </li>
+                    </ul>
+                </div>
+                <button id="delete_all_message" onclick="delete_all_messages()">Delete All Message</button>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="dashboard.js"></script>
     </body>
 </html>
