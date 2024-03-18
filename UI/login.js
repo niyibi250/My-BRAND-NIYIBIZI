@@ -64,3 +64,26 @@ function check_the_input(elem,values)
       elem.style.border="1px solid red"
   }
 }
+
+// redirect
+let login_button=document.getElementById('login_button')
+
+let user_list=JSON.parse(localStorage.getItem('user_list'))
+
+login_button.addEventListener('click',check_user)
+
+function check_user()
+{
+  for(let i=0; i<user_list.length; i++)
+  { 
+    if(email.value=='admin123@gmail.com' && password.value=='admin12345')
+    {
+      window.location.assign('dashboard.html')
+    }
+    else if(email.value==user_list[i].email && password.value==user_list[i].password)
+    {
+      window.location.assign('index.html')
+    }
+  } 
+
+}

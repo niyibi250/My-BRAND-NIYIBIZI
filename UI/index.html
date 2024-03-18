@@ -28,6 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#service">Service</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -164,6 +165,67 @@
             </div>
         </section>
 
+       <!--blog-->
+       <section class="blog" id="blog">
+        <div class="center-text" data-aos="fade-down">
+            <h2>My <span>Blogs</span></h2>
+        </div>
+        <div class="blog-content" data-aos="zoom-in-up" id="blog_cont">
+            <div class="row_blog">
+                <img src="port-1.jpg">
+                <div class="blog-row">
+                    <div class="blog-text">
+                        <h5>Design</h5>
+                    </div>
+                </div>
+                <h4>Website Development For Dark Mode</h4>
+                <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
+                <h6 style="display:none">The publication in Russian media of at least one ostensibly sensitive phone call among high-ranking German air force officers has both the German government and military establishment taking cover from a barrage of criticism.
+
+                    From both home and abroad, the questions are piling up. In the Bundestag, the German parliament, the opposition Christian Democrats look to be angling for a special inquiry. Members of the center-left Social Democrats (SPD), who lead the government under Chancellor Olaf Scholz, have reacted lukewarmly to the idea.</h6>
+            </div>
+            <div class="row_blog">
+                <img src="port-1.jpg">
+                <div class="blog-row">
+                    <div class="blog-text">
+                        <h5>Coding</h5>
+                    </div>
+                </div>
+                <h4>Best way of Coding in Python</h4>
+                <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
+                <h6 style="display:none">The number of foreign tourists to Indonesia was lower than other neighbors due to lack of visa exemptions as well as major international events, such as Taylor Swift's Eras Tour, he said.
+
+                    Indonesia last year stopped the visa-free entry citizens of 159 countries and territories used to be eligible for amid concerns about "disruption of public order and potential transmission of diseases."
+                    The government earlier planned to waive visas for tourists from 20 countries including the U.S. and China.
+                    
+                    Indonesia last year received 11.7 million foreign tourists, far behind most of its neighbors.
+                    
+                    Malaysia led Southeast Asia with 29 million tourist arrivals, followed by Thailand, Singapore and Vietnam.
+                    
+                    Malaysia and Thailand started waiving visas for Chinese and Indian tourists last year</h6>
+            </div>
+            <div class="row_blog">
+                <img src="port-1.jpg">
+                <div class="blog-row">
+                    <div class="blog-text">
+                        <h5>Design</h5>
+                    </div>
+                </div>
+                <h4>Besics features in Figma</h4>
+                <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
+                <div style="display:none">In Ahmedabad, Peters plans to meet with Bhupendrabhai Patel, the Chief Minister of Gujarat, a state that has been an engine of Indian economic growth and has significant connections to New Zealand's Indian diaspora. In Delhi, he will also be highlighting the shared interest that New Zealand and India have in helping the development of the Pacific Islands region," the New Zealand government said in a press release.
+                    "India is a country with which New Zealand can, should and will be doing more. New Zealand recognises the global and regional leadership role that India plays, and we are determined to build a broader, deeper, mutually beneficial relationship," Peters stated in the press release.
+                    
+                    As per the press release, "The Coalition Government is making South and Southeast Asia a priority because it is critical to maintaining and building New Zealand's security and prosperity.</div>
+            </div>
+            
+        </div>
+        <!-- read more -->
+        <div id="readmore">
+        
+        </div>
+    </section>
+
         <!--potofolio-->
         <section class="potofolio" id="portfolio">
             <div class="center-text" data-aos="fade-down">
@@ -246,7 +308,7 @@
                     <div class="errors"></div>
                     <textarea name=""  cols="30" rows="10" placeholder="Write Message Here..." id="text_contact"></textarea>
                     <div class="errors"></div>
-                    <input type="submit" name="" value="send Message" class="send-btn">
+                    <input type="submit" name="" value="send Message" class="send-btn" id="send_message_button">
                 </form>
             </div>
         </section>
@@ -261,7 +323,8 @@
             </a>
         </div>
 
-       <script src="index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <script src="index.js"></script>
        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
        <script>
          AOS.init({

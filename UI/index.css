@@ -503,3 +503,105 @@ form .send-btn:hover{
     margin: 0 auto;
 }
 }
+
+
+/* blog styling */
+
+.blog{
+    background: var(--second-bg-color);
+}
+.blog-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.2rem;
+}
+.row_blog img{
+    height: auto;
+    width: 100%;
+    border-radius: 28px;
+    border-bottom: 1.4rem;
+}
+.row_blog{
+    background: #2d343f;
+    border-radius: 28px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color );
+    padding: 20px;
+    transition: all .50s ease;
+
+}
+.blog-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+.row_blog h5{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--other-colar);
+}
+.row_blog i{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    font-size: 17px;
+    border-radius: 50%;
+    color: var(--text-color);
+    background-color:#075fe4;  
+}
+.row_blog h4{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.row_blog:hover{
+    border: 1px solid var(--main-color);
+    transform:translateY(-5px) scale(1.03) ;
+    cursor: pointer;
+}
+
+/* show more */
+
+#readmore{
+    position: fixed;
+    width: 70vw;
+    height: 85vh;
+    background-color: #303a49;
+    top: 0px;
+    margin-top: 13vh;
+    margin-left: 10vw;
+    padding: 20px 25px;
+    display: none;
+    font-size: 20px;
+    font-weight: 600;
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 3vh;
+    box-shadow: 0 0 20px var(--bg-color );
+
+}
+.readmore_button{
+    background: #2d343f;
+    border: none;
+    outline: none;
+    color: var(--main-color);
+}
+#close_button{
+    align-self: flex-end;
+    width: 25px;
+    height: 25px;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    border: none;
+    outline: none;
+    box-shadow: 0 0 5px var(--main-color );
+    border-radius: 4px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
