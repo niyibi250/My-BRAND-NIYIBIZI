@@ -6,6 +6,8 @@ import cors from 'cors'
 
 import admin_routers from '../routes/admin_routes'
 
+import user_routes from '../routes/user_routes'
+
 import {connectDB} from '../db/blog_db'
 
 
@@ -22,6 +24,8 @@ app.use(cors({origin:"*"}))
 app.use(express.static('.../UI'));
 
 app.use('/api/v1/admin', admin_routers)
+
+app.use('/api/v1/login',user_routes)
 
 app.use(express.json())
 

@@ -9,7 +9,7 @@ import {getall_blog,create_blog,update_blog,get_single_blog,delete_blog} from '.
 
 import {getall_contact,create_contact, get_single_contact, delete_contact} from '../controller/admin_contact_controller'
 
-import {getall_user, create_user, get_single_user, update_user, delete_user} from '../controller/admin_user_controller'
+import {getall_user, get_single_user, update_user, delete_user} from '../controller/admin_user_controller'
 //                middleware
 // -----------------------------------------------------------//
 router.use(express.json())
@@ -28,7 +28,7 @@ router.route('/contact/:id').get(get_single_contact).delete(delete_contact)
 
 // routes for User
 
-router.route('/user').get(getall_user).post(create_user)
+router.route('/user').get(getall_user)
 router.route('user/id').get(get_single_user).delete(delete_user).patch(update_user)
 // export routes---------------------------------------------//
 
