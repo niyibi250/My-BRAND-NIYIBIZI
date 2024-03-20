@@ -31,7 +31,7 @@
                 <h3><a href="#about">About</a></h3>
                 <h3><a>Services</a></h3>
                 <h3><a href="#blogs_page">Blogs</a></h3>
-                <h3><a>Portfolio</a></h3>
+                <h3><a href="#portofolio_page">Portfolio</a></h3>
                 <h3><a href="#contact_">Contact</a></h3>
             </div>
             <a href="/UI/index.html"><i class="ri-arrow-left-circle-fill" ></i></a>
@@ -57,59 +57,65 @@
         </div>
         <!-- Dashbord -->
 
-        <section class="container" id="dashboard">
-           <div class="container_content">
-                <h3>Recent activities</h3>
-                <table>
-                    <tr>
-                        <th>#Section</th>
-                        <th>#Element</th>
-                        <th>#id/class</th>
-                        <th>#Notes</th>
+        <section class="main_page_container" id="dashboard">
+           <div class="secand_main_container">
+                <h3 class="page_title">Recent activities</h3>
+                <table class="table_">
+                    <tr class="table_row">
+                        <th class="table_head">#Section</th>
+                        <th class="table_head">#Element</th>
+                        <th class="table_head">#id/class</th>
+                        <th class="table_head">#Notes</th>
                     </tr>
-                    <tr>
-                        <td>Home</td>
-                        <td>h1</td>
-                        <td>#</td>
-                        <td>change font</td>
+                    <tr class="table_row">
+                        <td class="table_data">Home</td>
+                        <td class="table_data">h1</td>
+                        <td class="table_data">#</td>
+                        <td class="table_data">change font</td>
                     </tr>
-                    <tr>
-                        <td>Home</td>
-                        <td>p</td>
-                        <td>#</td>
-                        <td>change content</td>
+                    <tr class="table_row">
+                        <td class="table_data">Home</td>
+                        <td class="table_data">p</td>
+                        <td class="table_data">#</td>
+                        <td class="table_data">change content</td>
                     </tr>
-                    <tr>
-                        <td>contact</td>
-                        <td>input</td>
-                        <td>#</td>
-                        <td>change image</td>
+                    <tr class="table_row">
+                        <td class="table_data">contact</td>
+                        <td class="table_data">input</td>
+                        <td class="table_data">#</td>
+                        <td class="table_data">change image</td>
                     </tr>
                 </table>
             </div>
         </section>
         <!-- user -->
-        <section class="container" id="user_page">
-            <div class="user_ contact_">
+        <section class="main_page_container" id="user_page">
+            <div class ='secand_main_container' id="user_ contact_container">
                 <h3>Users</h3>
-                <div class="user_container_first_low contact_message_first_low">
-                    <div id="user_first_low">
-                       <div id="name_">Name</div>
-                       <div id="email_">Email</div>
-                       <div id="Password">Password</div>
-                       <div id="delete_">Delete User</div>
-                       <div id="edit_">Edit User</div>
-                    </div>
-                    <ul id="user_list">
-                        <li class="user_row">
-                            <h4 class="name_">Eric NIYIBIZI</h4>
-                            <h4 class="email_">admin123@gmail.com</h4>
-                            <h4 class="password">admin12345</h4>
-                            <i class="ri-delete-bin-6-fill delete_c"></i>
-                            <i class="ri-pencil-fill"></i>
-                        </li>
-                    </ul>
-                </div>
+
+                <table class="table_">
+                    <tr class="table_row">
+                        <th class="table_head">NAME</th>
+                        <th class="table_head">EMAIL</th>
+                        <th class="table_head">PASSWORD</th>
+                        <th class="table_head">DELETE</th>
+                        <th class="table_head">EDIT</th>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data">NIYIBIZI Eric</td>
+                        <td class="table_data">ericniyibizi1998@gmail.com</td>
+                        <td class="table_data">eric1234</td>
+                        <td class="table_data"><i class="ri-delete-bin-6-fill"></i></td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data">MUHUNZI John</td>
+                        <td class="table_data">mukunzijohn1998@gmail.com</td>
+                        <td class="table_data">mukunzi1234</td>
+                        <td class="table_data"><i class="ri-delete-bin-6-fill"></i></td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                </table>
             </div>
 
         </section>
@@ -228,6 +234,31 @@
                 </div>
             </div>
         </section>
+
+        <!--portofolio-->
+        <section class="container" id="portofolio_page">
+            <div class="portofolio_page">
+                <h3>Portofolio</h3>
+                <div class="list_of_portofolio">
+                    <div id="portofolio_first_row">
+                        <div id="titles_">Portfolio Title</div>
+                        <div id="last_madified_">Last Modified</div>
+                        <div id="action_delete_">Delete</div>
+                        <div id="action_edit_">Edit</div> 
+                    </div>
+                    <ul class="blogs_list" id="list_of_portofolio_cont">
+                        <li class="blog">
+                            <h4 class="portforial_titles">Website Development For Dark Mode</h4>
+                            <h4 class="portforial_madified">----</h4>
+                            <i class="ri-delete-bin-6-fill"></i>
+                            <i class="ri-pencil-fill"></i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Contact -->
         <section class="container" id="contact_">
             <div class="contact_">

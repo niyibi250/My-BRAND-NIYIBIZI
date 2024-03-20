@@ -149,101 +149,64 @@ i:hover{
     color: var(--bg-color);
     margin: 10px 0 0 0;
 }
-#dashboard{
+/* Dashboard */
+/* ----------------------------------------------------------------------- */
+.main_page_container{
     background-color: var(--second-bg-color);
     width: 100vw;
     height: 100vh;
     z-index: 1;
 }
-.container_content{
+.secand_main_container{
    padding: 10% 0 0 10%;
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: space-between;
+   justify-content:start;
    height: 100%;
 }
 
 
-#dashboard h3{
+.secand_main_container h3{
     margin: 2% 5%;
     align-self: flex-start;
     border-bottom: 1.5px solid;
     padding: 0px;
 }
 
-table{
+.table_{
     width: 100%;
-    height: 100%;
-    padding: 1% 5%;
+    height: fit-content;
+    padding: 1% 3%;
 }
-th{
-    text-align: start;
+.table_row{
+    height: 50px;
+}
+.table_head{
+    text-align: center;
     border-bottom: 1.5px solid;
     border-collapse: collapse;
+    height: 20px;
+    padding-bottom: 2px;
 }
-td{
+.table_data{
+    text-align: center;
     border-bottom: 1.5px solid;
+    border-collapse: collapse;
+    height: 20px;
 }
 
 h4{
     display: inline-block;
 }
-h3{
-    font-size: var(--h3-font);
-    color: var(--other-colar);
-}
+
 
 /* style user */
 /* -------------------------------------------------------------------------------------- */
-#user_page{
-    width: 100vw;
-    min-height: 100vh;
-    background: var(--second-bg-color);
-    color: var(--other-colar);
-}
-.contact_message_list{
-
-}
-#user_first_low{
-    border-bottom: 1px solid var(--other-colar);
-    padding: 0 0 10px 0;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin-top: 4%;
-}
-.user{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 60px;
-    border-bottom: 1px solid var(--other-colar);
-    padding-bottom: 20px;
-}
-.user_row{
-    margin-top:25px;
-    border-bottom: 1px solid var(--other-colar);
-    padding-bottom: 10px;
-}
-.user_row .email_{
-     width: 250px;
-}
-.user_row .password{
-    margin-left: 100px;
-    width: 150px;
-}
-.user_row .ri-delete-bin-6-fill{
-    margin-left: 170px;
-}
-.user_row .ri-pencil-fill{
-    margin-left: 240px;
-}
+  
 
 /* style about */
-
+/* -------------------------------------------------------------------------- */
 #about{
    width: 100vw;
    height: 100vh;
@@ -308,6 +271,7 @@ button{
 }
 
 /* styling blogs */
+/* ----------------------------------------------------------------------------- */
 
 #blogs_page{
     width: 100vw;
@@ -369,9 +333,10 @@ li h4{
     width: 100px;
     text-align: start;
 }
+
 .Blogs_categolies{
     width: 100px;
-    text-align: center;
+    text-align: start;
 }
 .last_madified{
     text-align: center;
@@ -507,13 +472,62 @@ form{
  font-size: 35px;
 }
 
+/* styling portofolio */
+/* --------------------------------------------------------------------------------------------------- */
+ #portofolio_page{
+    width: 100vw;
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--other-colar);
+ }
+.portofolio_page{
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 8% 0 0 15%;
+    position: relative;
+}
+
+#portofolio_first_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--other-colar);
+    margin-bottom: 20px;
+}
+
+
+.portofolio_page h3{
+    margin: 30px 0 40px 0;
+   font-size: 25px;
+   border-bottom: 1px solid var(--other-colar);
+}
+.list_of_portofolio{
+    margin-top: 17px;
+}
+.portforial_titles{
+    width: 300px;
+    text-align: start;
+}
+#portofolio_first_row #last_madified{
+     margin-left: 100px;
+}
+.portforial_madified{
+    margin-right: 120px;
+}
+#portofolio_first_row #action_delete{
+    margin-left: 80px;
+}
+
 /* style contact section */
 /* -------------------------------------------------------------------------------------------------- */
 
 #contact_{
     width: 100vw;
     min-height: 100vh;
-    background: var(--bg-color);
+    background: var(--second-bg-color);
     color: var(--other-colar);
 }
 .contact_{
