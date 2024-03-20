@@ -10,6 +10,8 @@ import {getall_blog,create_blog,update_blog,get_single_blog,delete_blog} from '.
 import {getall_contact,create_contact, get_single_contact, delete_contact} from '../controller/admin_contact_controller'
 
 import {getall_user, get_single_user, update_user, delete_user} from '../controller/admin_user_controller'
+
+import verfy_token from '../verify_token/verify_token'
 //                middleware
 // -----------------------------------------------------------//
 router.use(express.json())
@@ -17,7 +19,7 @@ router.use(express.json())
 
 // routes for blogs
 
-router.route('/blog').get(getall_blog).post(create_blog)
+router.route('/blog').get(verfy_token,getall_blog).post(create_blog)
 
 router.route('/blog/:id').get(get_single_blog).patch(update_blog).delete(delete_blog)
 
