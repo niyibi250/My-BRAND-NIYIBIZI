@@ -3,6 +3,8 @@ import { Request,Response } from "express";
 
 import user_model from "../model/user_model";
 
+import {update_user_data_varidation} from '../post_data_varidation/admin_post_data_varidation'
+
 // get all user-----------------------------------------------------------
 const getall_user= async function(req:Request, res:Response)
 {
@@ -35,8 +37,14 @@ const get_single_user= async function(req:Request, res:Response)
 const update_user= async function(req:Request, res:Response)
 {
    try{
-        const {id:user_id}= req.params
-        const user= await user_model.findOne({_id:user_id})
+      const varidate=update_user_data_varidation(req.body)
+      if(varidate.error)
+      {
+         return res.status(404).json({msg:'the varidation did not go throught', varidate})
+      } 
+       
+       const {id:user_id}= req.params
+        const user= await user_model.findOneAndUpdate({_id:user_id},req.body,{new:true})
         res.status(200).json({user})
    }
    catch(error)
