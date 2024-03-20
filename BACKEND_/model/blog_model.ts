@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Blog_schema= new mongoose.Schema({
     title:{type:String, required:[true, 'please title'], trim:true},
-    categorly:{type:String},
+    categorly:{type:String,required:[true, 'please provide categorly'] },
     photo:{type:String},
     content:{type:String}
 })

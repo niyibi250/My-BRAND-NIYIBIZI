@@ -2,6 +2,8 @@
   
  import blog_model from '../model/blog_model'
 
+ import {update_blog_data_varidation,create_blog_data_varidation} from '../post_data_varidation/admin_post_data_varidation'
+
  //  for getting the blog---------------------------
 
  const getall_blog= async function (_req:Request, res:Response)
@@ -21,8 +23,13 @@
  const create_blog= async function(req:Request, res:Response)
  {
      try{
- 
-         const blog_data= req.body
+         const varidate=create_blog_data_varidation(req.body)
+         if(varidate.error)
+         {
+            return res.status(404).json({msg:'the varidation did not go throught', varidate})
+         }
+         
+        const blog_data= req.body
          const blog=await blog_model.create(blog_data)
          res.status(200).json(blog_data)
      }
@@ -52,8 +59,14 @@ const update_blog= async function(req:Request, res:Response)
 {
     try{
 
+        const varidate=update_blog_data_varidation(req.body)
+        if(varidate.error)
+        {
+           return res.status(404).json({msg:'the varidation did not go throught', varidate})
+        }
+
         const {id:blog_id}= req.params
-        const blog=await blog_model.findOneAndUpdate({_id:blog_id})
+        const blog=await blog_model.findOneAndUpdate({_id:blog_id},req.body,{new:true})
         res.status(200).json(blog)
     }
     catch(error){
