@@ -154,7 +154,7 @@ i:hover{
 .main_page_container{
     background-color: var(--second-bg-color);
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     z-index: 1;
 }
 .secand_main_container{
@@ -183,14 +183,14 @@ i:hover{
     height: 70px;
 }
 .table_head{
-    text-align: center;
+    text-align: start;
     border-bottom: 1.5px solid;
     border-collapse: collapse;
     height: 20px;
     padding-bottom: 2px;
 }
 .table_data{
-    text-align: center;
+    text-align: start;
     border-bottom: 1.5px solid;
     border-collapse: collapse;
     height: 20px;
