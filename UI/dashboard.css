@@ -35,7 +35,7 @@ a{
  padding: 20px;
  position: fixed;
  height: 100vh;
- width: 10vw;
+ width: 10%;
  top: opx;
  left: opx;
  background-color: #1b1f24;
@@ -177,10 +177,10 @@ i:hover{
 .table_{
     width: 100%;
     height: fit-content;
-    padding: 1% 3%;
+    padding: 1% 5%;
 }
 .table_row{
-    height: 50px;
+    height: 70px;
 }
 .table_head{
     text-align: center;
@@ -207,412 +207,36 @@ h4{
 
 /* style about */
 /* -------------------------------------------------------------------------- */
-#about{
-   width: 100vw;
-   height: 100vh;
-   background: var(--bg-color);
-}
-
-.edit{
-    width: 90%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 8% 0 0 12%;
-    
-
-}
-.edit h3{
-    font-size: 25px;
-    border-bottom: 1px solid var(--other-colar);
-    margin-bottom: 10px;
-}
-#cont-3 h3{
-    margin: 2% 5%;
-    align-self: flex-start;
-    border-bottom: 1.5px solid;
-    padding: 0 0 15px 0;
-}
-
-.input{
-    color: var(--other-colar);
-    width: 70%;
-    height: 40px;
-    padding: 20px;
-    border: none;
-    outline: none ;
-    box-shadow: 0 0 5px var(--main-color);
-    background: #2d343f;
-    border-radius: 8px;
-    margin:  15px 35px 15px 8px;
-    
-}
 #form{
+    width: 80%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    width: 100%;
-}
-button{
-    width: fit-content;
-    height: 35px;
-    padding: 0 10px;
-    background: var(--main-color);
-    border: none;
-    outline: none;
-    font-size: var(--p-font);
-    align-self: center;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-.box_abaut{
-    display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 
 /* styling blogs */
 /* ----------------------------------------------------------------------------- */
+ #blog_first_low{
+     width: 30%;
+ }
+  
 
-#blogs_page{
-    width: 100vw;
-    min-height: 100vh;
-    background: var(--second-bg-color);
-    color: var(--other-colar);
-}
-.blogs_page{
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 8% 0 0 15%;
-    position: relative;
-}
-#blog_first_row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.blogs_page h3{
-   margin: 30px 0 40px 0;
-   font-size: 25px;
-   border-bottom: 1px solid var(--other-colar);
-}
-.list_of_blogs{
-    margin-top: 17px;
-}
-#blog_first_row{
-    border-bottom: 1px solid var(--other-colar);
-    padding: 0 0 10px 0;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin-top: 10px;
-}
-.action_delete{
-    padding-right: 40px;
-}
-li h4{
-    font-size: 15px;
-    font-weight:400;
-    color: var(--text-color);
-}
-
-.blog{
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   margin-bottom: 30px;
-   border-bottom: 1px solid var(--other-colar);
-   padding: 5px 0;
-}
-.titles{
-    width: 100px;
-    text-align: start;
-}
-
-.Blogs_categolies{
-    width: 100px;
-    text-align: start;
-}
-.last_madified{
-    text-align: center;
-}
-
-.create_{
-    width: fit-content;
-    border: none;
-    outline: none;
-    align-self: flex-start;
-    margin-bottom: 30px;
-}
-
-.ri-delete-bin-6-fill, .ri-pencil-fill{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--main-color);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    backdrop-filter: brightness(88%);
-    font-size: 20px;
-    box-shadow: 0 0 20px transparent;
-    cursor: pointer;
-    transition: all .50s ease;
-}
 
 /* style create blog box */
 
-.create_box_{
-    height: 75vh;
-    width: 75vw;
-    border: none;
-    outline: none ;
-    box-shadow: 0 0 10px var(--main-color);
-    position: absolute;
-    right: 40px;
-    bottom:45px;
-    background-color: var(--bg-color);
-    padding: 20px 30px;
+#create_box{
     display: none;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-.create_cont{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
-   margin-bottom: 20px;
-}
-.text_area{
-    width: 80%;
-    height: 300px;
-    background: var(--second-bg-color);
-    color: var(--other-colar);
-    border: none;
-    outline: none ;
-    box-shadow: 0 0 5px var(--main-color);
-    background: #2d343f;
-    padding: 20px;
-    border-radius: 8px;
-    color: var(--text-color);
-    margin: 20px 15px 15px 0;
-}
-.form input::placeholder, form textarea::placeholder{
-    color: var(--other-colar);
-    font-size: 15px;
-}
-.create_input{
-    border: none;
-    outline: none ;
-    box-shadow: 0 0 5px var(--main-color);
-    background: #2d343f;
-    color: var(--text-color);
-    border-radius: 8px;
-    height: 40px;
-    padding: 20px;
-
-}
-#text_area_{
-    display: flex;
-    flex-direction: column;
-    color: var(--other-colar);
-    font-weight: 400;
-}
-.create_cont_ h4{
-    margin-right: 20px;
-}
-#create_button{
-    align-self: flex-end;
-    border: none;
-    outline: none ;
-    box-shadow: 0 0 5px var(--main-color);
-}
-form{
-    padding: 20px 20px 0 20px;
-}
-.button_{
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
+  }
 
 /* Delete all blogs box*/
-.worning_box{
-    width: 50vw;
-    height: 35vh;
-    position: fixed;
-    bottom: 20vh;
-    right: 20vw;
-    background: var(--bg-color);
+#worning_box{
     display: none;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--main-color);
-
-}
-.worning_box #close_button{
-    align-self: flex-end;
-    margin-right: 2%;
-}
-.worning_box .create_{
-    margin-bottom: 20px;
-}
-.worning_box h3{
-   font-size: 20px;
-   border: none;
-}
-.worning_box h2{
- font-size: 35px;
-}
-
+ }
 /* styling portofolio */
 /* --------------------------------------------------------------------------------------------------- */
- #portofolio_page{
-    width: 100vw;
-    min-height: 100vh;
-    background: var(--bg-color);
-    color: var(--other-colar);
- }
-.portofolio_page{
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 8% 0 0 15%;
-    position: relative;
-}
-
-#portofolio_first_row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--other-colar);
-    margin-bottom: 20px;
-}
-
-
-.portofolio_page h3{
-    margin: 30px 0 40px 0;
-   font-size: 25px;
-   border-bottom: 1px solid var(--other-colar);
-}
-.list_of_portofolio{
-    margin-top: 17px;
-}
-.portforial_titles{
-    width: 300px;
-    text-align: start;
-}
-#portofolio_first_row #last_madified{
-     margin-left: 100px;
-}
-.portforial_madified{
-    margin-right: 120px;
-}
-#portofolio_first_row #action_delete{
-    margin-left: 80px;
-}
-
+ 
 /* style contact section */
 /* -------------------------------------------------------------------------------------------------- */
-
-#contact_{
-    width: 100vw;
-    min-height: 100vh;
-    background: var(--second-bg-color);
-    color: var(--other-colar);
-}
-.contact_{
-    width: 95%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 9% 0 0 15%;
-}
-.contact_ h3{
-    font-size: 25px;
-    border-bottom: 1px solid var(--other-colar);
-    padding: 0 0 5px 0;
-
-}
-#contact_first_low{
-    border-bottom: 1px solid var(--other-colar);
-    padding: 0 0 10px 0;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    margin-top: 4%;
-}
-.message_{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 60px;
-    border-bottom: 1px solid var(--other-colar);
-    padding-bottom: 20px;
-}
-
-.name_{
-   width: 160px;
-   
-}
-.email_{
-    margin-left: 40px;
-    width: 400px;
-}
-.time_{
-    margin-left: 80px;
-    width: 80px;
-}
-.read_{
-    margin-left: 230px;
-}
-.delete_c{
-    margin-left: 230px; 
-}
-.respond_{
-    margin-left: 200px;
-}
-#email_{
-    margin-right: 20px;
-}
-#time_{
-  
-}
-.contact_message_list i{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--main-color);
-    border-radius: 50%;
-    width: fit-content;
-    height: fit-content;
-    font-size: 20px;
-    margin-right: 17px;
-    box-shadow: 0 0 20px transparent;
-    cursor: pointer;
-    transition: all .50s ease; 
-}
-.contact_message_list i:hover{
-     transform: scale(1.2);
-}
-
-#delete_all_message{
-    align-self: flex-start;
-    margin-bottom: 3%;
-    margin-top: 2%;
-}
-#delete_all_message:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--main-color);
-}
