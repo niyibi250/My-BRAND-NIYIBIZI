@@ -29,13 +29,10 @@
             <h3  id="dashboards"><a href="#dashboard">Dashboard</a></h3>
             <div class="menu-list">
                 <h3><a href="#user_page">Users</a></h3>
-                <h3><a href="#about">About</a></h3>
-                <h3><a href="#user_page">Users</a></h3>
-                <h3><a href="#about">About</a></h3>
+                <h3><a href="#About">About</a></h3>
                 <h3><a>Services</a></h3>
                 <h3><a href="#blogs_page">Blogs</a></h3>
-                <h3><a href="#portofolio_page">Portfolio</a></h3>
-                <h3><a href="#contact_">Contact</a></h3>
+                <h3><a href="#contact">Contact</a></h3>
             </div>
             <a href="/UI/index.html"><i class="ri-arrow-left-circle-fill" ></i></a>
             <a href="/UI/index.html"><i class="ri-arrow-left-circle-fill" ></i></a>
@@ -100,7 +97,7 @@
         <!-- user -->
         <section class="main_page_container" id="user_page">
             <div class ='secand_main_container' id="user_ contact_container">
-                <h3>Users</h3>
+                <h3 class="page_title">Users</h3>
 
                 <table class="table_">
                     <tr class="table_row">
@@ -113,7 +110,7 @@
                     <tr class="table_row">
                         <td class="table_data">NIYIBIZI Eric</td>
                         <td class="table_data">ericniyibizi1998@gmail.com</td>
-                        <td class="table_data">eric1234</td>
+                        <td class="table_data">1234</td>
                         <td class="table_data"><i class="ri-delete-bin-6-fill"></i></td>
                         <td class="table_data"><i class="ri-pencil-fill"></i></td>
                     </tr>
@@ -129,83 +126,89 @@
 
         </section>
         <!-- About -->
-
-        <section class="container" id="about">
-            <div class="edit" id="edit_abaut">
-                <h3>About</h3>
-                <form id="form">
-                    <div class="box_abaut">
-                        <label for="experience">Enter experience:</label>
-                        <input id="experience" class="input" name="experience">
-                    </div>
-                    <div class="box_abaut">
-                        <label for="speciality">Enter speciality:</label>
-                        <input id="speciality" class="input" name="speciality">
-                    </div>
-                    <div class="box_abaut">
-                        <label for="address">Enter Address:</label>
-                        <input id="address_" class="input" name="address">
-                    </div>
-                    <div class="box_abaut">
-                        <label for="email">Enter Email:</label>
-                        <input id="email" class="input" name="email">
-                    </div>
-                    <div class="box_abaut">
-                        <label for="Phone">Enter Phone:</label>
-                        <input id="Phone" class="input" name="Phone">
-                    </div>
-                    <div class="box_abaut">
-                        <label for="Availablity">Enter Availablity:</label>
-                        <input id="availblelity" class="input" name="Availablity">
-                    </div>
-                    <button type="submit" id="Add_to_local_storege">Add to website</button>
-                </form>
-            </div>
-        </section>
+        
+        <section class="main_page_container" id="About">
+            <div class="secand_main_container">
+                 <h3 class="page_title">About</h3>
+                 <table class="table_">
+                     <tr class="table_row">
+                         <th class="table_head">Title</th>
+                         <th class="table_head">Details</th>
+                         <th class="table_head">Last Modified</th>
+                         <th class="table_head">Edit</i></th>
+                     </tr>
+                     <tr class="table_row">
+                         <td class="table_data">Experience:</td>
+                         <td class="table_data">1 Year</td>
+                         <td class="table_data">---</td>
+                         <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                     </tr>
+                     <tr class="table_row">
+                         <td class="table_data">Speciality:</td>
+                         <td class="table_data">HTML, CSS, JS, NODE.JS</td>
+                         <td class="table_data">-----</td>
+                         <td class="table_data"><i class="ri-pencil-fill"></td>
+                     </tr>
+                     <tr class="table_row">
+                         <td class="table_data">Address:</td>
+                         <td class="table_data">Kigali, Rwanda</td>
+                         <td class="table_data">-----</td>
+                         <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                     </tr>
+                     <tr class="table_row">
+                        <td class="table_data">Email:</td>
+                        <td class="table_data">ericniyibizi1998@gmail.com</td>
+                        <td class="table_data">----</td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data">Phone:</td>
+                        <td class="table_data">+250786424557</td>
+                        <td class="table_data">----</td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data">Availablity:</td>
+                        <td class="table_data">Availble</td>
+                        <td class="table_data">----</td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                 </table>
+             </div>
+         </section>
+        
 
         <!-- Blogs -->
 
-        <section class="container" id="blogs_page">
-            <div class="blogs_page">
-                <h3>Blogs</h3>
-                <div class="list_of_blogs">
-                    <div id="blog_first_row">
-                        <div class="titles">Blog Title</div>
-                        <div class="Blogs_categolies">Categories</div>
-                        <div class="last_madified">Last Modified</div>
-                        <div class="action_delete">Delete</div>
-                        <div class="action_edit">Edit</div>
-                    </div>
-                    <ul class="blogs_list" id="list_of_blog_cont">
-                        <li class="blog">
-                            <h4 class="titles">Website Development For Dark Mode</h4>
-                            <h4 class="Blogs_categolies">Design</h4>
-                            <h4 class="last_madified">----</h4>
-                            <i class="ri-delete-bin-6-fill"></i>
-                            <i class="ri-pencil-fill"></i>
-
-                        </li>
-                        <li class="blog">
-                            <h4 class="titles">Best way of Coding in Python</h4>
-                            <h4 class="Blogs_categolies">Coding</h4>
-                            <h4 class="last_madified">----</h4>
-                            <i class="ri-delete-bin-6-fill"></i>
-                            <i class="ri-pencil-fill"></i>
-
-                        </li>
-                        <li class="blog">
-                            <h4 class="titles">Besics features in Figma</h4>
-                            <h4 class="Blogs_categolies">Disign</h4>
-                            <h4 class="last_madified">----</h4>
-                            <i class="ri-delete-bin-6-fill"></i>
-                            <i class="ri-pencil-fill"></i>
-
-                        </li>
-                    </ul>
-                </div>
+        <section class="main_page_container" id="blogs_page">
+            <div class="secand_main_container" id="blog_container">
+                <h3 class="page_title">Blogs</h3>
+                <table class="table_">
+                    <tr class="table_row">
+                        <th class="table_head">Blog Title</th>
+                        <th class="table_head">category</th>
+                        <th class="table_head">Last Modified</th>
+                        <th class="table_head">Delete</th>
+                        <th class="table_head">Edit</th>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data" id="blog_first_low">Website Development For Dark Mode</td>
+                        <td class="table_data">Design</td>
+                        <td class="table_data">-----</td>
+                        <td class="table_data"><i class="ri-delete-bin-6-fill"></i></td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                    <tr class="table_row">
+                        <td class="table_data">Website Development For Dark Mode</td>
+                        <td class="table_data">Design</td>
+                        <td class="table_data">-----</td>
+                        <td class="table_data"><i class="ri-delete-bin-6-fill"></i></td>
+                        <td class="table_data"><i class="ri-pencil-fill"></i></td>
+                    </tr>
+                
+                </table>
                 <div>
                     <button class="create_" id="create_">Create Blog</button>
-                    <button class="create_" id="delete_all_blog">Delete all Blogs</button>
                 </div>
                 <!-- blog create box -->
                 <div class="create_box_" id="create_box">
@@ -244,57 +247,36 @@
             </div>
         </section>
 
-        <!--portofolio-->
-        <section class="container" id="portofolio_page">
-            <div class="portofolio_page">
-                <h3>Portofolio</h3>
-                <div class="list_of_portofolio">
-                    <div id="portofolio_first_row">
-                        <div id="titles_">Portfolio Title</div>
-                        <div id="last_madified_">Last Modified</div>
-                        <div id="action_delete_">Delete</div>
-                        <div id="action_edit_">Edit</div> 
-                    </div>
-                    <ul class="blogs_list" id="list_of_portofolio_cont">
-                        <li class="blog">
-                            <h4 class="portforial_titles">Website Development For Dark Mode</h4>
-                            <h4 class="portforial_madified">----</h4>
-                            <i class="ri-delete-bin-6-fill"></i>
-                            <i class="ri-pencil-fill"></i>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Contact -->
-        <section class="container" id="contact_">
-            <div class="contact_">
-                <h3>Messages</h3>
-                <div class="contact_message_first_low">
-                    <div id="contact_first_low">
-                       <div id="name_">Name</div>
-                       <div id="email_">Email</div>
-                       <div id="time_">Send Time</div>
-                       <div id="read_">Read Message</div>
-                       <div id="delete_">Delete Message</div>
-                       <div id="respond_">Respond</div>
-                    </div>
-                    <ul class="contact_message_list" id="contact_message_list">
-                        <li class="message_">
-                            <h4 class="name_">Eric NIYIBIZI</h4>
-                            <h4 class="email_">ericniyibizi1998@gmail.com</h4>
-                            <h4 class="time_">----</h4>
-                            <i class="ri-mail-unread-line read_"></i>
-                            <i class="ri-delete-bin-6-fill delete_c"></i>
-                            <i class="ri-discuss-fill respond_"></i>
-                        </li>
-                    </ul>
-                </div>
-                <button id="delete_all_message" onclick="delete_all_messages()">Delete All Message</button>
-            </div>
-        </section>
+        
+        <section class="main_page_container" id="contact">
+            <div class="secand_main_container">
+                 <h3 class="page_title">Message</h3>
+                 <table class="table_">
+                     <tr class="table_row">
+                         <th class="table_head">Name</th>
+                         <th class="table_head">Email</th>
+                         <th class="table_head">Send Time</th>
+                         <th class="table_head">Read Message</th>
+                         <th class="table_head">Delete Message</th>
+                     </tr>
+                     <tr class="table_row">
+                         <td class="table_data">Eric NIYIBIZI</td>
+                         <td class="table_data">ericniyibizi1998@gmail.com</td>
+                         <td class="table_data">------</td>
+                         <td class="table_data"> <i class="ri-mail-unread-line read_"></i></td>
+                         <td class="table_data"><i class="ri-delete-bin-6-fill delete_c"></i></td>
+                     </tr>
+                     <tr class="table_row">
+                        <td class="table_data">MUHOZA M.Claire</td>
+                        <td class="table_data">Muhozaclaire1998@gmail.com</td>
+                        <td class="table_data">------</td>
+                        <td class="table_data"> <i class="ri-mail-unread-line read_"></i></td>
+                        <td class="table_data"><i class="ri-delete-bin-6-fill delete_c"></i></td>
+                    </tr>
+                 </table>
+             </div>
+         </section>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
         <script src="dashboard.js"></script>
     </body>
