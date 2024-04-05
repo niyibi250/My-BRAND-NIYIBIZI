@@ -133,7 +133,7 @@ window.addEventListener('load', create_new_blog)
 async function create_new_blog()
 {
     try{
-            let {data:{blog:blog_list}}= await axios.get('http://localhost:3000/api/v1/admin/blog')
+            let {data:{blog:blog_list}}= await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/blog')
 
             let blog_container=document.getElementById('blog_cont')
             for(let i=0; i<blog_list.length; i++)
@@ -171,7 +171,7 @@ async function show_content(button_clicked)
         let parent_dv=button_clicked.parentElement
         
         
-        const response= await axios.get(`http://localhost:3000/api/v1/admin/blog/${parent_dv.id}`)
+        const response= await axios.get(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${parent_dv.id}`)
         
         readmore_box.innerHTML=
         `
@@ -214,7 +214,7 @@ async function append_new_message(email_,username_,text_area)
 {
     try{
         const postdata={email:email_,username:username_,message:text_area}
-        const {data:{contact:sent_message}}= await axios.post('http://localhost:3000/api/v1/admin/contact',postdata)
+        const {data:{contact:sent_message}}= await axios.post('https://my-bland-backend.onrender.com/api/v1/admin/contact',postdata)
         console.log(sent_message)
     }
     catch(error){
