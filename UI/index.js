@@ -1,3 +1,4 @@
+
 // for page styling
 const header = document.querySelector('header')
 
@@ -121,73 +122,69 @@ function check_the_input(elem,values)
 }
 
 
-// update the Abaut section
 
-let experiance=document.getElementById("experience")
-let speciality=document.getElementById("speciality")
-let address=document.getElementById("address_")
-let email_about=document.getElementById("email")
-let phone=document.getElementById("Phone")
-let avaiblity=document.getElementById("availblelity")
 
-experiance.innerHTML=localStorage.getItem('experiance')
-
-speciality.innerHTML=localStorage.getItem('speciality')
-
-address.innerHTML=localStorage.getItem('address')
-
-email_about.innerHTML=localStorage.getItem('email')
-
-phone.innerHTML=localStorage.getItem('phone')
-
-// avaiblity.innerHTML=localStorage.getItem('avaiblity')
-
-// update blogs
+// ------------------------------blogs--------------------------------------------//
+//--------------------------------------------------------------------------------//
 
 
 window.addEventListener('load', create_new_blog)
 
-let blog_list=JSON.parse(localStorage.getItem('blog_list')) || []
-
-
-function create_new_blog()
+async function create_new_blog()
 {
-    let blog_container=document.getElementById('blog_cont')
-    for(let i=0; i<blog_list.length; i++)
-    {
-        let new_blog_post_container=document.createElement('div')
+    try{
+            let {data:{blog:blog_list}}= await axios.get('http://localhost:3000/api/v1/admin/blog')
 
-        new_blog_post_container.innerHTML=
-        `
-        <img src="${blog_list[i].image}">
-        <div class="blog-row">
-            <div class="blog-text">
-                <h5>${blog_list[i].category}</h5>
-            </div>
-        </div>
-        <h4>${blog_list[i].title}</h4>
-        <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
-        <h6 style="display:none">${blog_list[i].content}</h6>
-        `
-        new_blog_post_container.classList.add('row_blog')
-        blog_container.append(new_blog_post_container)
+            let blog_container=document.getElementById('blog_cont')
+            for(let i=0; i<blog_list.length; i++)
+            {
+                let new_blog_post_container=document.createElement('div')
+
+                new_blog_post_container.innerHTML=
+                `
+                <img src="${blog_list[i].image}">
+                <div class="blog-row">
+                    <div class="blog-text">
+                        <h5>${blog_list[i].category}</h5>
+                    </div>
+                </div>
+                <h4>${blog_list[i].title}</h4>
+                <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
+                <h6 style="display:none">${blog_list[i].content}</h6>
+                `
+                new_blog_post_container.classList.add('row_blog')
+                new_blog_post_container.setAttribute("id", blog_list[i]._id)
+                blog_container.append(new_blog_post_container)
+            }
     }
+    catch(error){
+        console.log(error)
+ }
 }
 
-// ReadMore Box
+// ReadMore Box----------------------------------------------------------------//
 
-function show_content(button_clicked)
+async function show_content(button_clicked)
 {
-    let readmore_box=document.getElementById('readmore')
-    let parent_dv=button_clicked.parentElement
-    let lastchild=parent_dv.lastElementChild;
-    readmore_box.innerHTML=
-    `
-    <button onclick="close_box()" id='close_button'> <i class="ri-close-line" id='close_symbol'></i></button>
-    <div class='content_box'>${lastchild.innerHTML}</div>
-    `
-    readmore_box.style.display='flex'
-    console.log(lastchild)
+    try{
+        let readmore_box=document.getElementById('readmore')
+        let parent_dv=button_clicked.parentElement
+        
+        
+        const response= await axios.get(`http://localhost:3000/api/v1/admin/blog/${parent_dv.id}`)
+        
+        readmore_box.innerHTML=
+        `
+        <button onclick="close_box()" id='close_button'> <i class="ri-close-line" id='close_symbol'></i></button>
+        <div class='content_box'>${response.data.content}</div>
+        `
+        readmore_box.style.display='flex'
+        console.log(response)
+        }
+        catch(error)
+        {
+            console.log(error)
+        }
 }
 
 let readmore_box=document.getElementById('readmore')
@@ -198,6 +195,7 @@ function close_box()
 }
 
 // ---------------------------------send the message-----------------------------//
+//--------------------------------------------------------------------------------//
 
 form.addEventListener('submit', send_message)
 
@@ -217,6 +215,7 @@ async function append_new_message(email_,username_,text_area)
     try{
         const postdata={email:email_,username:username_,message:text_area}
         const {data:{contact:sent_message}}= await axios.post('http://localhost:3000/api/v1/admin/contact',postdata)
+        console.log(sent_message)
     }
     catch(error){
         console.log(error)
