@@ -348,5 +348,80 @@ form input, form textarea{
 /* style contact section */
 /* -------------------------------------------------------------------------------------------------- */
 
+
+/* worning box */
+
+.wanning_box{
+    position:fixed;
+    top: 20%;
+    left: 20%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    height: 30vh;
+    z-index: 2;
+    background-color: white;
+    color: black;
+    padding: 3%;
+}
+
+.wanning_box .flex_cont{
+    align-items: center;
+    justify-content: center;
+}
+
 /* loader*/
 /*--------------------------------------------------------------------------------------------- */
+.spinner{
+    width: 300px;
+    height: 300px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+.spinner_sector{
+     width: 100%;
+     height: 100%;
+     /* background-color: red; */
+     position: absolute;
+     border-radius: 50%;
+     border: 15px solid transparent;
+     mix-blend-mode: overlay;
+     animation: rotate var(--duration) var(--timing) infinite;
+}
+.spinner_sector_red{
+    border-top-color: lightcoral;
+    --duration:1s;
+    --timing:ease-in-out
+}
+
+.spinner_sector_blue{
+    border-left-color:lightblue;
+    --duration:1.3s;
+    --timing:ease-in
+}
+
+.spinner_sector_green{
+    border-right-color: lightgreen;
+    --duration:1.5s;
+    --timing:ease-out
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

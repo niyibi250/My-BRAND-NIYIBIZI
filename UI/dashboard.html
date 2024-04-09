@@ -305,7 +305,7 @@
             <dev id="blog_content" name="content"></dev>
             <div class="flex_cont">
                 <label for="Photo" class="label">Choose Blog Photo:</label>
-                <input type="file" id="blog_photo" name="Photo" onchange="get_selected_image()">
+                <input type="file" id="blog_photo" name="Photo" onchange="convert_image_to_base64(event)">
             </div>
             <div class="flex_cont">
                 <button class="button" onclick="postblog()">Post Blog</button>
@@ -325,7 +325,7 @@
             <dev id="blog_content_edit" name="content_edit"></dev>
             <div class="flex_cont">
                 <label for="Photo" class="label">Choose Blog Photo:</label>
-                <input type="file" id="edit_blog_photo" name="Photo" onchange="get_selected_image()">
+                <input type="file" id="edit_blog_photo" name="Photo" onchange="convert_image_to_base64(event)">
             </div>
             <div class="flex_cont">
                 <button class="button" onclick="post_edited_blog()">Post Blog</button>
@@ -333,6 +333,55 @@
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+        <!-- Delete wanning user-->
+        <div class="wanning_box" id="delete_user_wanning">
+            <div class="wonning_text">
+                <h3>Are you sure you want to precced with DELETE this Action can't be reversed.
+                    If you want to procced with action press PROCCED, atherwise press ABORD to Cancel action.
+                </h3>
+            </div>
+            <div class="flex_cont">
+                <button class="button" onclick="send_delete_user_req()">Procced</button>
+                <button class="button" onclick="cancel_delete_user(this)">Abord</button>
+            </div>
+        </div>
+
+         <!-- Delete wanning message-->
+        <div class="wanning_box" id="delete_message_wanning">
+            <div class="wonning_text">
+                <h3>Are you sure you want to precced with DELETE this Action can't be reversed.
+                    If you want to procced with action press PROCCED, atherwise press ABORD to Cancel action.
+                </h3>
+            </div>
+            <div class="flex_cont">
+                <button class="button" onclick="send_delete_message_req()">Procced</button>
+                <button class="button" onclick="cancel_delete_user(this)">Abord</button>
+            </div>
+        </div>
+
+        <!-- Delete wanning blog-->
+        <div class="wanning_box" id="delete_blog_wanning">
+            <div class="wonning_text">
+                <h3>Are you sure you want to precced with DELETE this Action can't be reversed.
+                    If you want to procced with action press PROCCED, atherwise press ABORD to Cancel action.
+                </h3>
+            </div>
+            <div class="flex_cont">
+                <button class="button" onclick="send_delete_blog_req()">Procced</button>
+                <button class="button" onclick="cancel_delete_user(this)">Abord</button>
+            </div>
+        </div>
+
+        <!-- spinner loader  -->
+
+        <div class="spinner" id="spinner">
+            Loading.....
+            <div class="spinner_sector spinner_sector_red"></div>
+            <div class="spinner_sector spinner_sector_blue"></div>
+            <div class="spinner_sector spinner_sector_green"></div>
+            
+        </div>
 
         <!-- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> -->
 

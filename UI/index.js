@@ -21,6 +21,11 @@ window.onscroll = () => {
 }
 
 
+//token----------------------
+
+const token=localStorage.getItem('token')
+
+
 // validate the contact pages
 
 let email=document.getElementById("email_contact")
@@ -133,7 +138,7 @@ window.addEventListener('load', create_new_blog)
 async function create_new_blog()
 {
     try{
-            let {data:{blog:blog_list}}= await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/blog')
+            let {data:{blog:blog_list}}= await axios.get('http://localhost:3000/api/v1/admin/blog')
 
             let blog_container=document.getElementById('blog_cont')
             for(let i=0; i<blog_list.length; i++)
@@ -142,15 +147,14 @@ async function create_new_blog()
 
                 new_blog_post_container.innerHTML=
                 `
-                <img src="${blog_list[i].image}">
+                <img src="${blog_list[i].photo}">
                 <div class="blog-row">
                     <div class="blog-text">
-                        <h5>${blog_list[i].category}</h5>
+                        <h5>${blog_list[i].categorly}</h5>
                     </div>
                 </div>
                 <h4>${blog_list[i].title}</h4>
                 <button onclick="show_content(this)" class="readmore_button">ReadMore...</button>
-                <h6 style="display:none">${blog_list[i].content}</h6>
                 `
                 new_blog_post_container.classList.add('row_blog')
                 new_blog_post_container.setAttribute("id", blog_list[i]._id)
@@ -168,10 +172,12 @@ async function show_content(button_clicked)
 {
     try{
         let readmore_box=document.getElementById('readmore')
+        let main__=document.getElementById('main__')
+        main__.style.opacity='9%';
         let parent_dv=button_clicked.parentElement
         
         
-        const response= await axios.get(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${parent_dv.id}`)
+        const response= await axios.get(`http://localhost:3000/api/v1/admin/blog/${parent_dv.id}`)
         
         readmore_box.innerHTML=
         `
@@ -191,7 +197,10 @@ let readmore_box=document.getElementById('readmore')
 function close_box()
 {
     readmore_box.style.display='none'
+    let main__=document.getElementById('main__')
+    main__.style.opacity='100%';
     console.log('clseddd')
+
 }
 
 // ---------------------------------send the message-----------------------------//
@@ -213,8 +222,10 @@ function send_message()
 async function append_new_message(email_,username_,text_area)
 {
     try{
-        const postdata={email:email_,username:username_,message:text_area}
-        const {data:{contact:sent_message}}= await axios.post('https://my-bland-backend.onrender.com/api/v1/admin/contact',postdata)
+        const current_date=new Date()
+        const current_time=current_date.toDateString()
+        const postdata={email:email_,username:username_,message:text_area, time:current_time}
+        const {data:{contact:sent_message}}= await axios.post('http://localhost:3000/api/v1/admin/contact',{token:token,message_data:postdata})
         console.log(sent_message)
     }
     catch(error){

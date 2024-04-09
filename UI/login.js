@@ -66,7 +66,8 @@ function check_the_input(elem,values)
   }
 }
 
-// redirect
+// redirect--------------------------------
+
 let login_button=document.getElementById('login_button')
 
 login_button.addEventListener('click',check_user)
@@ -75,11 +76,6 @@ async function check_user(ev)
 {
    ev.preventDefault();
     try{
-            if(email.value=='admin123@gmail.com' && password.value=='admin12345')
-          {
-            window.location.assign('dashboard.html')
-            return
-          }
           const post_data={email:email.value, password:password.value}
 
           const response=await axios.post('http://localhost:3000/api/v1/login/login', post_data)
@@ -90,9 +86,17 @@ async function check_user(ev)
             errorMsg[1].innerHTML='Incorrect Email OR Password'
             return
           }
+          else if(response.data.user.email == 'admin123@gmail.com' && response.data.user.password == 'admin12345')
+          {
+            window.location.assign('dashboard.html')
+            localStorage.setItem('token',response.data.token)
+            return
+          }
 
           else{
             window.location.assign('index.html')
+            localStorage.setItem('taken',response.data.token)
+            return
           }
 
           console.log(response)
