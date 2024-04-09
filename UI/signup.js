@@ -87,7 +87,7 @@ async function add_new_user(ev)
     try{
         const post_data={email:email.value, username:username.value, password:password.value}
     
-        const response= await axios.post('http://localhost:3000/api/v1/login/Registration', post_data)
+        const response= await axios.post('https://my-bland-backend.onrender.com/api/v1/login/Registration', post_data)
        
         if(response.data.msg == 'user exist pls login')
         {
