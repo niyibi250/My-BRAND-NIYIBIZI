@@ -1,4 +1,5 @@
 
+
 // for page styling
 const header = document.querySelector('header')
 
@@ -20,6 +21,27 @@ window.onscroll = () => {
     
 }
 
+// -------------------------load spinner----------------------------
+
+const spinner=document.getElementById('spinner')
+
+// show spinner--------------------------------
+
+function show_spinner()
+{
+   spinner.style.display='flex'
+   const main__=document.getElementById('main__')
+         main__.style.opacity='9%';
+}
+
+// hidd the spinner-----------------------------
+
+function hidd_spinner()
+{
+   spinner.style.display='none'
+   const main__=document.getElementById('main__')
+         main__.style.opacity='100%';
+}
 
 //token----------------------
 
@@ -137,7 +159,9 @@ window.addEventListener('load', create_new_blog)
 
 async function create_new_blog()
 {
-    try{
+    try{    
+            show_spinner()
+
             let {data:{blog:blog_list}}= await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/blog')
 
             let blog_container=document.getElementById('blog_cont')
@@ -160,6 +184,7 @@ async function create_new_blog()
                 new_blog_post_container.setAttribute("id", blog_list[i]._id)
                 blog_container.append(new_blog_post_container)
             }
+            hidd_spinner()
     }
     catch(error){
         console.log(error)
@@ -171,6 +196,7 @@ async function create_new_blog()
 async function show_content(button_clicked)
 {
     try{
+        show_spinner()
         let readmore_box=document.getElementById('readmore')
         let main__=document.getElementById('main__')
         main__.style.opacity='9%';
@@ -185,7 +211,8 @@ async function show_content(button_clicked)
         <div class='content_box'>${response.data.content}</div>
         `
         readmore_box.style.display='flex'
-        console.log(response)
+        
+        hidd_spinner()
         }
         catch(error)
         {
@@ -222,11 +249,13 @@ function send_message()
 async function append_new_message(email_,username_,text_area)
 {
     try{
+        show_spinner()
         const current_date=new Date()
         const current_time=current_date.toDateString()
         const postdata={email:email_,username:username_,message:text_area, time:current_time}
         const {data:{contact:sent_message}}= await axios.post('https://my-bland-backend.onrender.com/api/v1/admin/contact',{token:token,message_data:postdata})
-        console.log(sent_message)
+        
+        hidd_spinner()
     }
     catch(error){
         console.log(error)

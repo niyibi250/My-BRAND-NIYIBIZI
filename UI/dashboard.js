@@ -149,10 +149,12 @@ async function send_delete_user_req() {
    try{
             show_spinner()
             //send the delete requirest
+            const delete_user_worning_box=document.getElementById('delete_user_wanning')
+            delete_user_worning_box.style.opacity='9%'
             const {data:{user:deleted_user}}= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`)
             console.log(deleted_user)
            
-            const delete_user_worning_box=document.getElementById('delete_user_wanning')
+      
             delete_user_worning_box.style.display='none'
 
             const main__=document.getElementById('main__')
@@ -161,6 +163,7 @@ async function send_delete_user_req() {
             hidd_spinner()
             // reload window
             window.location.reload();
+            delete_user_worning_box.style.opacity='100%'
    }
    catch(error){
        console.log(error)
@@ -211,6 +214,7 @@ async function post_user()
    try{
          show_spinner()
          const edit_user_box=document.getElementById('edit_user_box')
+         edit_user_box.style.opacity='9%'
          const username=document.getElementById('username_contact').value
          const email=document.getElementById('email_contact').value
          const password=document.getElementById('Password_contact').value
@@ -220,13 +224,15 @@ async function post_user()
          const response=await axios.patch(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`,{token:token, user_data:update_user_data})
          
          console.log(response)
+         
 
+         hidd_spinner()
          window.location.reload()
          //set user editor
          edit_user_box.style.display= 'none';
          const main__=document.getElementById('main__')
          main__.style.opacity='100%';
-         hidd_spinner()
+         edit_user_box.style.opacity='100%'
    }
    catch(error)
    {
@@ -282,8 +288,8 @@ function delete_blog(button)
             var grandparent= parentElement.parentNode
             grandparent_id_blog = grandparent.id;
 
-            const delete_user_worning_box=document.getElementById('delete_blog_wanning')
-            delete_user_worning_box.style.display='flex'
+            const delete_blog_worning_box=document.getElementById('delete_blog_wanning')
+            delete_blog_worning_box.style.display='flex'
 
             console.log(grandparent_id_blog)
 
@@ -299,6 +305,10 @@ async function send_delete_blog_req() {
    try{
 
             show_spinner()
+            
+            const delete_blog_worning_box=document.getElementById('delete_blog_wanning')
+            delete_blog_worning_box.style.opacity='9%'
+
             const response= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${grandparent_id_blog}`)
             console.log(response.data)
 
@@ -307,8 +317,10 @@ async function send_delete_blog_req() {
             main__.style.opacity='9%';
 
             hidd_spinner()
-
+           
             window.location.reload();
+
+            delete_blog_worning_box.style.opacity='100%'
    }
    catch(error){
        console.log(error)
@@ -360,7 +372,12 @@ catch(error)
 async function post_edited_blog()
 {
    try{
-        show_spinner() 
+        show_spinner()
+        
+        const edit_blog_container=document.getElementById('edit_blog_container')
+        
+        edit_blog_container.style.opacity='9%'
+
         const title=document.getElementById('edit_blog_title').value                      
          const categorly=document.getElementById('edit_blog_categorly').value        
          const content=quill_blog_edit.root.innerHTML
@@ -381,6 +398,7 @@ async function post_edited_blog()
 
          hidd_spinner()
          window.location.reload();
+         edit_blog_container.style.opacity='100%'
          
    }
    catch(error)
@@ -460,8 +478,9 @@ async function postblog()
    try{
       show_spinner()
       var htmlContent = quill_blog_create.root.innerHTML;
-      // var content = JSON.stringify(quill_blog_create.getContents());
+
       const create_blog_box=document.getElementById('create_blog_container')
+      create_blog_box.style.opacity='9%'
       var blog_title=document.getElementById('blog_title')
       var blog_categorly=document.getElementById('blog_categorly')
       var blog_photo=localStorage.getItem('image_url')
@@ -480,9 +499,11 @@ async function postblog()
    concelingfunc()
 
    hidd_spinner()
+
    //   reload the window----
      window.location.reload();
 
+     create_blog_box.style.opacity='100%'
     
    }
    catch(error)
@@ -554,19 +575,20 @@ function delete_message(button)
          main__.style.opacity='9%';
 }
 
-https://my-bland-backend.onrender.com
 // send delete message req----------------------------------
 
 async function send_delete_message_req() {
    try{
             show_spinner()
-
+            const delete_message_worning_box=document.getElementById('delete_message_wanning')
+            delete_message_worning_box.style.opacity='9%'
             const {data:{contact:deleted_contact}}= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/contact/${grandparent_id_message}`)
             console.log(deleted_contact)
 
             hidd_spinner()
             // reload window
             window.location.reload();
+            delete_message_worning_box.style.opacity='100%'
    }
 
    catch(error){

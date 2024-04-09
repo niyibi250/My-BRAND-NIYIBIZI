@@ -1,4 +1,29 @@
 
+// -------------------------load spinner----------------------------
+
+const spinner=document.getElementById('spinner_signup')
+
+// show spinner--------------------------------
+
+function show_spinner()
+{
+   spinner.style.display='flex'
+   const main__=document.getElementById('main_signup')
+   main__.style.opacity='9%';
+}
+
+// hidd the spinner-----------------------------
+
+function hidd_spinner()
+{
+   spinner.style.display='none'
+   const main__=document.getElementById('main_signup')
+   main__.style.opacity='100%';
+}
+
+
+// --------------------------------------------------------
+
 let email=document.getElementById("email_signup")
 let username=document.getElementById("username_signup")
 let password=document.getElementById("password_signup")
@@ -74,6 +99,7 @@ password.addEventListener('change',function()
 }
 )
 
+
 // add user to user_list
 // --------------------------//
 
@@ -81,12 +107,14 @@ let signup_button=document.getElementById('signup_button')
 
 signup_button.addEventListener('click', add_new_user)
 
-async function add_new_user(ev)
+async function add_new_user(event)
 {
-    ev.preventDefault();
+    event.preventDefault();
     try{
+        show_spinner()
         const post_data={email:email.value, username:username.value, password:password.value}
-    
+
+
         const response= await axios.post('https://my-bland-backend.onrender.com/api/v1/login/Registration', post_data)
        
         if(response.data.msg == 'user exist pls login')
@@ -96,9 +124,9 @@ async function add_new_user(ev)
         }
         
         else{
-            window.location.assign('index.html')
+            window.location.assign('index2.html')
         }
-        
+        hidd_spinner()
     }
     catch(error)
     {

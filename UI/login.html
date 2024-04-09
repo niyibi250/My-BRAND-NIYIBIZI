@@ -13,32 +13,44 @@
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
     </head>
     <body>
-        <section class="main-cont">
-            <h2 style="font-size: 2rem;">Hello!</h1>
-            <h1 style="font-size: 2.5rem;">Welcome</h1>
-            <h1 style="font-size: 2.5rem;">Back..</h1>
-            <form id="inputform">
-                <input class="inputfield "  id="email_signin" type="text" placeholder="Email">
-                <div class="errors"></div>
-                <input class="inputfield" id="password_signin" type="text" placeholder="Possword" >
-                <div class="errors"></div>
-                <input id="remember" type="checkbox" name="remember_me">
-                <label for="remember_me">Remember me?</label>
-                <div class="errors"></div>
-                <button class="btn-btm" id="login_button" type="submit" >Login</button>
-                <p>forget the  password?</p>
-            </form>
-            <div class="text-inbtn">
-                <div class="line"></div>
-                <h5>Or login with</h5>
-                <div class="line"></div>
-            </div>
-            <a class="google-icon">
-                <i class="ri-google-fill"></i>
-                <h3>Google</h3>
-            </a>
-            <h5>You don't have account?<a class="login" href="signup.html"> Sign up</a></h5>
-        </section>
+        <div class="main__" id="main_login">
+            <section class="main-cont">
+                <h2 style="font-size: 2rem;">Hello!</h1>
+                <h1 style="font-size: 2.5rem;">Welcome</h1>
+                <h1 style="font-size: 2.5rem;">Back..</h1>
+                <form id="inputform">
+                    <input class="inputfield "  id="email_signin" type="text" placeholder="Email">
+                    <div class="errors"></div>
+                    <input class="inputfield" id="password_signin" type="text" placeholder="Possword" >
+                    <div class="errors"></div>
+                    <input id="remember" type="checkbox" name="remember_me">
+                    <label for="remember_me">Remember me?</label>
+                    <div class="errors"></div>
+                    <button class="btn-btm" id="login_button" type="submit" >Login</button>
+                    <p>forget the  password?</p>
+                </form>
+                <div class="text-inbtn">
+                    <div class="line"></div>
+                    <h5>Or login with</h5>
+                    <div class="line"></div>
+                </div>
+                <a class="google-icon">
+                    <i class="ri-google-fill"></i>
+                    <h3>Google</h3>
+                </a>
+                <h5>You don't have account?<a class="login" href="signup.html"> Sign up</a></h5>
+            </section>
+        </div>
+        
+        <!-- spinner loader  -->
+
+        <div class="spinner" id="spinner_login">
+            Loading.....
+            <div class="spinner_sector spinner_sector_red"></div>
+            <div class="spinner_sector spinner_sector_blue"></div>
+            <div class="spinner_sector spinner_sector_green"></div>
+            
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
         <script src="login.js"></script>
     </body>
