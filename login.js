@@ -108,7 +108,7 @@ async function check_user(ev)
 
           const response=await axios.post('https://my-bland-backend.onrender.com/api/v1/login/login', post_data)
           
-          if(!response)
+          if(response.data.user == null)
           {
             errorMsg[0].innerHTML='Incorrect Email OR Password'
             errorMsg[1].innerHTML='Incorrect Email OR Password'
@@ -134,6 +134,7 @@ async function check_user(ev)
   }
   catch(error)
   {
+    alert('Signup Failed due to network issue or incorrect login data')
     window.location.assign('login.html')
   }
       
