@@ -52,7 +52,7 @@
             <div class="container" id="cont-2">
                 <div class="display-box">
                     <h4>Message</h4>
-                    <div class="display-number" id="number_of_message"><h4>58</h4></div>
+                    <div class="display-number" id="number_of_message"></div>
                 </div>
                 <div class="display-box">
                     <h4>Downloads</h4>
@@ -60,11 +60,11 @@
                 </div>
                 <div class="display-box">
                     <h4>Users</h4>
-                    <div class="display-number" id="number_of_user"><h4>5</h4></div>
+                    <div class="display-number" id="number_of_user"></div>
                 </div>
                 <div class="display-box">
                     <h4>Blogs</h4>
-                    <div class="display-number" id="number_of_blogs"><h4>3</h4></div>
+                    <div class="display-number" id="number_of_blogs"></div>
                 </div>
             </div>
             <!-- Dashbord -->
@@ -75,27 +75,27 @@
                     <table class="table_">
                         <tr class="table_row">
                             <th class="table_head">#Section</th>
-                            <th class="table_head">#Element</th>
-                            <th class="table_head">#id/class</th>
+                            <th class="table_head">#Number</th>
+                            <th class="table_head">#Last Modified</th>
                             <th class="table_head">#Notes</th>
                         </tr>
                         <tr class="table_row">
-                            <td class="table_data">Home</td>
-                            <td class="table_data">h1</td>
-                            <td class="table_data">#</td>
-                            <td class="table_data">change font</td>
+                            <td class="table_data">User</td>
+                            <td class="table_data" id="number_of_user_">----</td>
+                            <td class="table_data" id="last_mod_user">------</td>
+                            <td class="table_data">Registered user</td>
                         </tr>
                         <tr class="table_row">
-                            <td class="table_data">Home</td>
-                            <td class="table_data">p</td>
-                            <td class="table_data">#</td>
-                            <td class="table_data">change content</td>
+                            <td class="table_data">Blog</td>
+                            <td class="table_data" id="number_of_blog_">----</td>
+                            <td class="table_data"  id="last_mod_blog">-----</td>
+                            <td class="table_data">Blog created</td>
                         </tr>
                         <tr class="table_row">
-                            <td class="table_data">contact</td>
-                            <td class="table_data">input</td>
-                            <td class="table_data">#</td>
-                            <td class="table_data">change image</td>
+                            <td class="table_data">Message</td>
+                            <td class="table_data" id="number_of_message_">-----</td>
+                            <td class="table_data" id="last_mod_message">------</td>
+                            <td class="table_data">Sent Message from User</td>
                         </tr>
                     </table>
                 </div>
@@ -253,6 +253,7 @@
                 </div>
             </section>
         </div>
+
         <!-- edit user -->
         
         <div class="contact-form" id="edit_user_box" >

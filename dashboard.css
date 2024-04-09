@@ -230,18 +230,21 @@ h4{
     border: none; 
   }
 
-.contact-form{
+.contact-form {
     display: none;/*flex */
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
    
 }
-.contact-form form{
+#edit_user_box  form{
     position: fixed;
-    top: 10%;
+    top: 20%;
     width: 60%;
     z-index: 2;
+    background-color: var(--bg-color);
+    padding: 20px;
+    
 
 }
 form input, form textarea{
@@ -260,6 +263,9 @@ form input, form textarea{
 .label_{
     margin-bottom: 20px;
 }
+
+/*style edit user------------------------------------------------------*/
+
 
 /* style about */
 /* -------------------------------------------------------------------------- */

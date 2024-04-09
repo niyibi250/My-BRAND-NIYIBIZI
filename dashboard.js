@@ -100,6 +100,8 @@ async function get_list_of_user()
 
     }
    //  console.log(list_of_user)
+   document.getElementById('number_of_user').innerHTML=list_of_user.length+2
+   document.getElementById('number_of_user_').innerHTML=list_of_user.length+2
    }
    catch(error)
    {
@@ -179,6 +181,7 @@ async function edit_user(button)
    try{
          show_spinner()
          // get id of clicked user
+
          var parentElement = button.parentNode;     
          var grandparent= parentElement.parentNode
          grandparent_id_user= grandparent.id;
@@ -195,9 +198,10 @@ async function edit_user(button)
          document.getElementById('email_contact').value=response.data.user.email
          document.getElementById('Password_contact').value=response.data.user.password
          edit_user_box.style.display= 'flex';
-         const main__=document.getElementById('main__')
-         main__.style.opacity='4%';
+
          hidd_spinner()
+         const main__=document.getElementById('main__')
+         main__.style.opacity='9%';
    }
 
    catch(error)
@@ -222,8 +226,6 @@ async function post_user()
          const update_user_data={username:username, email:email, password:password}
 
          const response=await axios.patch(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`,{token:token, user_data:update_user_data})
-         
-         console.log(response)
          
 
          hidd_spinner()
@@ -268,9 +270,13 @@ async function get_list_of_blog()
       blog_.classList.add('table_row')
       blog_.setAttribute("id", list_of_blog[i]._id)
       table_blog.append(blog_)
+      document.getElementById('last_mod_blog').innerHTML=list_of_blog[i].time
       hidd_spinner()
     }
-
+   
+    document.getElementById('number_of_blogs').innerHTML=list_of_blog.length+3
+    document.getElementById('number_of_blog_').innerHTML=list_of_blog.length+3
+    
    }
    catch(error)
    {
@@ -544,8 +550,14 @@ async function get_list_of_message()
       message_.classList.add('table_row')
       message_.setAttribute("id", list_of_message[i]._id)
       table_message.append(message_)
-      hidd_spinner()
+      document.getElementById('last_mod_message').innerHTML=list_of_message[i].time
+     
     }
+    hidd_spinner()
+    document.getElementById('number_of_message').innerHTML=list_of_message.length+2
+    document.getElementById('number_of_message_').innerHTML=list_of_message.length+2
+    
+
    //  console.log(list_of_message, 'finshed message')
    }
    catch(error)
