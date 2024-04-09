@@ -571,8 +571,8 @@ form .send-btn:hover{
 #readmore{
     position: fixed;
     width:90vw;
-    min-height: 80vh;
-    background-color:var(--other-colar);
+    height: 90vh;
+    background-color:var(--text-color);
     top: 0;
     left: 0;
     margin-top: 5vh;
@@ -585,7 +585,8 @@ form .send-btn:hover{
     z-index: 1000;
     border-radius: 3vh;
     box-shadow: 0 0 20px var(--bg-color );
-    overflow-y: auto;
+    overflow-y: scroll;
+    color: black;
 
 }
 .readmore_button{

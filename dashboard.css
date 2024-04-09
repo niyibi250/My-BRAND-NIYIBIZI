@@ -298,13 +298,12 @@ form input, form textarea{
     width: 85vw;
     min-height: 90%;
     max-height: fit-content;
-    height: fit-content;
     background-color: #48585e;
     flex-direction: column;
     align-items: flex-start;
     padding: 2% 5%;
     z-index: 2;
-    top: 5%;
+    top: 2%;
     left: 8%;
 }
 
@@ -319,7 +318,7 @@ form input, form textarea{
 }
 #blog_content{
     min-height: 300px;
-    max-height: 400px;
+    max-height: 350px;
     width: 100%;
     margin-bottom: 10px;
     background-color: white;
@@ -353,7 +352,7 @@ form input, form textarea{
 /* edit blog */
 #blog_content_edit{
     min-height: 300px;
-    max-height: 400px;
+    max-height: 350px;
     width: 100%;
     margin-bottom: 10px;
     background-color: white;
