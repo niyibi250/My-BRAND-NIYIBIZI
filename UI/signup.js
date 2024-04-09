@@ -5,9 +5,10 @@ let password=document.getElementById("password_signup")
 let form=document.getElementById("inputform")
 let errorMsg=document.getElementsByClassName("errors")
 
-email.addEventListener('change',function(ev)
+email.addEventListener('change',function()
 {
-    // ev.preventDefault() 
+    
+
     if(email.value.trim() != '')
     { 
     for(let i=0; i<email.value.length; i++)
@@ -27,9 +28,9 @@ email.addEventListener('change',function(ev)
         console.log('email is empty')
     }
 })
-username.addEventListener('change',function(ev)
+username.addEventListener('change',function()
 {
-    // ev.preventDefault() 
+
     if(username.value.trim() != '')
     {
     for(let i=0; i<username.value.length; i++)
@@ -54,7 +55,7 @@ username.addEventListener('change',function(ev)
     }
 })
 
-password.addEventListener('change',function(ev)
+password.addEventListener('change',function()
 {
     // ev.preventDefault
     if(password.value.trim() != '')
@@ -75,30 +76,36 @@ password.addEventListener('change',function(ev)
 
 // add user to user_list
 // --------------------------//
-let user_list=JSON.parse(localStorage.getItem('user_list'))||[]
+
 let signup_button=document.getElementById('signup_button')
 
-signup_button.addEventListener('click',add_new_user)
+signup_button.addEventListener('click', add_new_user)
 
-function add_new_user()
+async function add_new_user(ev)
 {
-    let email=document.getElementById("email_signup")
-    let username=document.getElementById("username_signup")
-    let password=document.getElementById("password_signup")
-    add_to_user_list(email.value,username.value,password.value )
-    email.value=null
-    user_list.value=null
-    password.value=null
-    console.log('its should log homepage')
-}
-function add_to_user_list(email,username,password)
-{
-    user_list.push({
-        username,
-        email,
-        password
-    })
-    // user_list=[]
-    localStorage.setItem('user_list',JSON.stringify(user_list))
-    window.location.assign('index.html')
+    ev.preventDefault();
+    try{
+        const post_data={email:email.value, username:username.value, password:password.value}
+    
+        const response= await axios.post('https://my-bland-backend.onrender.com/api/v1/login/Registration', post_data)
+       
+        if(response.data.msg == 'user exist pls login')
+        {
+            alert(response.data.msg)
+            window.location.assign('login.html')
+        }
+        
+        else{
+            window.location.assign('index.html')
+        }
+        
+    }
+    catch(error)
+    {
+        alert('Signup Failed due to network issue or incorrect login data')
+            window.location.assign('signup.html')
+            email.value=null
+            username.value=null
+            password.value=null
+    }
 }

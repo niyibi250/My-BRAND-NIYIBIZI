@@ -104,7 +104,7 @@ a{
     margin: 5px 0 0 0;
     color: var(--other-colar);
 }
-.ri-arrow-left-circle-fill{
+.ri-arrow-left-circle-fill, .ri-delete-bin-6-fill, .ri-pencil-fill, .ri-mail-unread-line{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -118,14 +118,12 @@ a{
     box-shadow: 0 0 20px transparent;
     cursor: pointer;
     transition: all .50s ease;
-    margin-top: 40%; 
-    transition: all .50s ease;
-    margin-top: 40%; 
 }
-i:hover{
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--main-color);
 
+.ri-arrow-left-circle-fill:hover, .ri-delete-bin-6-fill:hover, .ri-pencil-fill:hover, .ri-mail-unread-line:hover{
+    border: 1px solid var(--main-color);
+    transform:translateY(-5px) scale(1.1) ;
+    cursor: pointer;
 }
 
 #cont-2{
@@ -174,7 +172,7 @@ i:hover{
 .main_page_container{
     background-color: var(--second-bg-color);
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
     z-index: 1;
 }
 .secand_main_container{
@@ -203,14 +201,14 @@ i:hover{
     height: 70px;
 }
 .table_head{
-    text-align: center;
+    text-align: start;
     border-bottom: 1.5px solid;
     border-collapse: collapse;
     height: 20px;
     padding-bottom: 2px;
 }
 .table_data{
-    text-align: center;
+    text-align: start;
     border-bottom: 1.5px solid;
     border-collapse: collapse;
     height: 20px;
@@ -223,18 +221,48 @@ h4{
 
 /* style user */
 /* -------------------------------------------------------------------------------------- */
-  
+  .icon_{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    text-decoration: none;
+    border: none; 
+  }
+
+.contact-form{
+    display: none;/*flex */
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+   
+}
+.contact-form form{
+    position: fixed;
+    top: 10%;
+    width: 60%;
+    z-index: 2;
+
+}
+form input, form textarea{
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none ;
+    box-shadow: 0 0 5px var(--main-color);
+    background: #2d343f;
+    color: var(--text-color);
+    margin-bottom: 4%;
+    margin-top: 2%;
+    border-radius: 8px; 
+}
+
+.label_{
+    margin-bottom: 20px;
+}
 
 /* style about */
 /* -------------------------------------------------------------------------- */
-#form{
-    width: 80%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
 
 
 /* styling blogs */
@@ -245,18 +273,173 @@ h4{
   
 
 
+/* style create blog box button*/
+
+.button{
+    min-width: 100px;
+    min-height: 30px;
+    border-radius: 5px;
+    background: var(--main-color);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-right: 5%;
+}
+.button:hover{
+
+    transform: scale(1.08);
+}
+
 /* style create blog box */
 
-#create_box{
+#create_blog_container, #edit_blog_container{
     display: none;
-  }
+    position: fixed;
+    width: 85vw;
+    min-height: 90%;
+    max-height: fit-content;
+    height: fit-content;
+    background-color: #48585e;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2% 5%;
+    z-index: 2;
+    top: 5%;
+    left: 8%;
+}
 
-/* Delete all blogs box*/
-#worning_box{
-    display: none;
- }
+.flex_cont{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 3%;
+}
+#blog_title{
+    margin-right: 20%;
+}
+#blog_content{
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    overflow-y:auto
+}
+
+.ql-toolbar{
+    width: 100%;
+    height: fit-content;
+    background-color: var(--other-colar);
+    margin-top: 10px;
+}
+
+.label{
+    margin-right: 20px;
+    
+}
+
+.input{
+    color: var(--other-colar);
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--other-colar);
+    margin-right: 5%;
+
+}
+
+
+/* edit blog */
+#blog_content_edit{
+    min-height: 300px;
+    max-height: 400px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    overflow-y:auto
+}
 /* styling portofolio */
 /* --------------------------------------------------------------------------------------------------- */
  
 /* style contact section */
 /* -------------------------------------------------------------------------------------------------- */
+
+
+/* worning box */
+
+.wanning_box{
+    position:fixed;
+    top: 20%;
+    left: 20%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    height: 30vh;
+    z-index: 2;
+    background-color: white;
+    color: black;
+    padding: 3%;
+}
+
+.wanning_box .flex_cont{
+    align-items: center;
+    justify-content: center;
+}
+
+/* loader*/
+/*--------------------------------------------------------------------------------------------- */
+.spinner{
+    width: 300px;
+    height: 300px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+.spinner_sector{
+     width: 100%;
+     height: 100%;
+     /* background-color: red; */
+     position: absolute;
+     border-radius: 50%;
+     border: 15px solid transparent;
+     mix-blend-mode: overlay;
+     animation: rotate var(--duration) var(--timing) infinite;
+}
+.spinner_sector_red{
+    border-top-color: lightcoral;
+    --duration:1s;
+    --timing:ease-in-out
+}
+
+.spinner_sector_blue{
+    border-left-color:lightblue;
+    --duration:1.3s;
+    --timing:ease-in
+}
+
+.spinner_sector_green{
+    border-right-color: lightgreen;
+    --duration:1.5s;
+    --timing:ease-out
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

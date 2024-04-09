@@ -1,3 +1,4 @@
+
 let email=document.getElementById("email_signin")
 let password=document.getElementById("password_signin")
 let form=document.getElementById("inputform")
@@ -65,25 +66,46 @@ function check_the_input(elem,values)
   }
 }
 
-// redirect
-let login_button=document.getElementById('login_button')
+// redirect--------------------------------
 
-let user_list=JSON.parse(localStorage.getItem('user_list'))
+let login_button=document.getElementById('login_button')
 
 login_button.addEventListener('click',check_user)
 
-function check_user()
+async function check_user(ev)
 {
-  for(let i=0; i<user_list.length; i++)
-  { 
-    if(email.value=='admin123@gmail.com' && password.value=='admin12345')
-    {
-      window.location.assign('dashboard.html')
-    }
-    else if(email.value==user_list[i].email && password.value==user_list[i].password)
-    {
-      window.location.assign('index.html')
-    }
-  } 
+   ev.preventDefault();
+    try{
+          const post_data={email:email.value, password:password.value}
 
+          const response=await axios.post('https://my-bland-backend.onrender.com/api/v1/login/login', post_data)
+          
+          if(response.data.user == null)
+          {
+            errorMsg[0].innerHTML='Incorrect Email OR Password'
+            errorMsg[1].innerHTML='Incorrect Email OR Password'
+            return
+          }
+          else if(response.data.user.email == 'admin123@gmail.com' && response.data.user.password == 'admin12345')
+          {
+            window.location.assign('dashboard.html')
+            localStorage.setItem('token',response.data.token)
+            return
+          }
+
+          else{
+            window.location.assign('index.html')
+            localStorage.setItem('taken',response.data.token)
+            return
+          }
+
+          console.log(response)
+         
+  }
+  catch(error)
+  {
+    alert('server side errror or network error')
+    window.location.assign('login.html')
+  }
+      
 }
