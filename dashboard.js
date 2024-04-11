@@ -75,10 +75,10 @@ const token =localStorage.getItem('token')
 
 async function get_list_of_user()
 {
-   try{
+   try{                   
 
     show_spinner()
-    const {data:{user:list_of_user}}=await axios.get('http://localhost:3000/api/v1/admin/user')
+    const {data:{user:list_of_user}}=await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/user')
 
     const table_user= document.getElementById('table_user')
     for(let i=0; i<list_of_user.length; i++)
@@ -157,7 +157,7 @@ async function send_delete_user_req() {
             //send the delete requirest
             const delete_user_worning_box=document.getElementById('delete_user_wanning')
             delete_user_worning_box.style.opacity='9%'
-            const {data:{user:deleted_user}}= await axios.delete(`http://localhost:3000/api/v1/admin/user/${grandparent_id_user}`)
+            const {data:{user:deleted_user}}= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`)
             console.log(deleted_user)
            
       
@@ -192,7 +192,7 @@ async function edit_user(button)
          console.log(grandparent_id_user)
 
          // send the get single user requirest
-         const response=await axios.get(`http://localhost:3000/api/v1/admin/user/${grandparent_id_user}`)
+         const response=await axios.get(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`)
          console.log(response.data)
 
 
@@ -231,7 +231,7 @@ async function post_user()
          var current_time=current_date.toDateString()
          const update_user_data={username:username, email:email, password:password, time:current_time}
 
-         const response=await axios.patch(`http://localhost:3000/api/v1/admin/user/${grandparent_id_user}`,{token:token, user_data:update_user_data})
+         const response=await axios.patch(`https://my-bland-backend.onrender.com/api/v1/admin/user/${grandparent_id_user}`,{token:token, user_data:update_user_data})
          
          hidd_spinner()
          window.location.reload()
@@ -256,7 +256,7 @@ async function get_list_of_blog()
    try{
     
      show_spinner() 
-    const {data:{blog:list_of_blog}}=await axios.get('http://localhost:3000/api/v1/admin/blog')
+    const {data:{blog:list_of_blog}}=await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/blog')
      
 
     const table_blog= document.getElementById('table_blog')
@@ -320,7 +320,7 @@ async function send_delete_blog_req() {
             const delete_blog_worning_box=document.getElementById('delete_blog_wanning')
             delete_blog_worning_box.style.opacity='9%'
 
-            const response= await axios.delete(`http://localhost:3000/api/v1/admin/blog/${grandparent_id_blog}`)
+            const response= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${grandparent_id_blog}`)
             console.log(response.data)
 
             // reload window---------
@@ -353,7 +353,7 @@ async function Edit_blog(button)
          grandparent_id_blog= grandparent.id;
  
 
-         const response= await axios.get(`http://localhost:3000/api/v1/admin/blog/${grandparent_id_blog}`)
+         const response= await axios.get(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${grandparent_id_blog}`)
 
          console.log(response)
 
@@ -398,7 +398,7 @@ async function post_edited_blog()
          const current_time=current_date.toDateString() 
          const blog_post_data={title:title, categorly:categorly, photo,content:content, time:current_time}
          
-         const response=await axios.patch(`http://localhost:3000/api/v1/admin/blog/${grandparent_id_blog}`, {token:token, blog_data:blog_post_data})
+         const response=await axios.patch(`https://my-bland-backend.onrender.com/api/v1/admin/blog/${grandparent_id_blog}`, {token:token, blog_data:blog_post_data})
 
          console.log(response)
          const edit_blog_box=document.getElementById('edit_blog_container')
@@ -502,7 +502,7 @@ async function postblog()
       const blog_data={title:blog_title.value, categorly:blog_categorly.value, photo:blog_photo, content:htmlContent, time:current_time}
      
       
-      const response=await axios.post('http://localhost:3000/api/v1/admin/blog',{token:token, blog_data:blog_data})
+      const response=await axios.post('https://my-bland-backend.onrender.com/api/v1/admin/blog',{token:token, blog_data:blog_data})
       
 
       
@@ -537,7 +537,7 @@ async function get_list_of_message()
    
    try{
     show_spinner()
-    const {data:{contact:list_of_message}}=await axios.get('http://localhost:3000/api/v1/admin/contact')
+    const {data:{contact:list_of_message}}=await axios.get('https://my-bland-backend.onrender.com/api/v1/admin/contact')
 
     const table_message= document.getElementById('table_message')
     for(let i=0; i<list_of_message.length; i++)
@@ -599,7 +599,7 @@ async function send_delete_message_req() {
             show_spinner()
             const delete_message_worning_box=document.getElementById('delete_message_wanning')
             delete_message_worning_box.style.opacity='9%'
-            const {data:{contact:deleted_contact}}= await axios.delete(`http://localhost:3000/api/v1/admin/contact/${grandparent_id_message}`)
+            const {data:{contact:deleted_contact}}= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/contact/${grandparent_id_message}`)
             console.log(deleted_contact)
 
             hidd_spinner()
@@ -625,7 +625,7 @@ async function read_message(button)
          var grandparent= parentElement.parentNode
          grandparent_id_message = grandparent.id;
          
-         const response=await axios.get(`http://localhost:3000/api/v1/admin/contact/${grandparent_id_message}`)
+         const response=await axios.get(`https://my-bland-backend.onrender.com/api/v1/admin/contact/${grandparent_id_message}`)
 
          console.log(response)
          document.getElementById('username_message').value=response.data.contact.username
@@ -652,7 +652,7 @@ async function delete_message_in_box()
 {
    try{
       show_spinner()
-      const response= await axios.delete(`http://localhost:3000/api/v1/admin/contact/${grandparent_id_message}`)
+      const response= await axios.delete(`https://my-bland-backend.onrender.com/api/v1/admin/contact/${grandparent_id_message}`)
          
          console.log(response)
 
