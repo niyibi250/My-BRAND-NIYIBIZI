@@ -94,6 +94,14 @@ section{
     align-items: center; 
     justify-content: flex-start;
 }
+.myimage{
+    height: 100%;
+    width: 50%;
+    /* background-color: #13bbff; */
+    background: url(Myimage.png);
+    background-size: cover;
+}
+
 .main-content h4{
    font-size: 1.6rem;
 }
